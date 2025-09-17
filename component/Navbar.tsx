@@ -3,8 +3,8 @@ import { ChevronDown } from 'lucide-react';
 
 const inriaSerif = Inria_Serif({
   subsets: ["latin"],
-  weight: ["300"], 
-  style: "italic",
+  weight: ["700"], 
+  style: "normal",
 });
 
 export default function Navbar(){
@@ -27,7 +27,7 @@ export default function Navbar(){
               </div>
             </div>
 
-              <div className={`flex items-center justify-center text-[40px] ${inriaSerif}`}>
+              <div className={`flex items-center justify-center text-[40px] ${inriaSerif.className}`}>
                Finnova
               </div>
             
