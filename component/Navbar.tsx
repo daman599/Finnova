@@ -1,5 +1,5 @@
 import { Inria_Serif } from "next/font/google";
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown } from "lucide-react";
 
 const inriaSerif = Inria_Serif({
   subsets: ["latin"],
@@ -8,34 +8,39 @@ const inriaSerif = Inria_Serif({
 });
 
 export default function Navbar() {
+
   return (
-    <nav className="px-6 sm:px-10 md:px-14 lg:px-16 mt-[9px] h-[48px] bg-white flex justify-between text-black">
-      <div className="hidden md:flex items-center justify-center gap-5 py-[11px]">
+    <nav className="w-full bg-white text-black px-1 lg:px-13 py-0.5 flex justify-between items-center">
+      <div className="hidden md:flex items-center gap-1 lg:gap-3">
         {["Personal", "Business", "Company"].map((item, index) => (
           <button
             key={index}
-            className="relative w-[83px] h-[26px] gap-1 rounded-xl hover:bg-[#CCCCCC] font-medium text-[12px] text-[#7A7A7A] flex items-center justify-center">
+            className="px-1 md:px-3 py-0.5 md:py-1 rounded-xl hover:bg-gray-200 font-medium text-[12px] text-gray-600 flex items-center gap-0.5 md:gap-1"
+          >
             {item}
-            <ChevronDown color="#c6c6c6" size={15} />
+            <ChevronDown size={14} className="text-gray-400" />
           </button>
-        ))
-        }
+        ))}
       </div>
 
-      <div className={`flex items-center justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl ${inriaSerif.className}`}>
+      <div
+        className={`text-2xl md:text-3xl lg:text-4xl font-bold flex-1 text-center ${inriaSerif.className}`}
+      >
         Finnova
       </div>
 
-      <div className="flex gap-6 items-center justify-center">
+      <div className="hidden md:flex items-center gap-4 md:gap-6">
         {["Help", "Blog", "En"].map((item, index) => (
-          <div key={index}
-            className="hidden md:flex items-center justify-center font-bold text-[12px] text-[#535353]">
+          <div
+            key={index}
+            className="flex items-center gap-0.5 md:gap-1 font-semibold text-[12px] text-gray-700 cursor-pointer"
+          >
             {item}
-            {index == 2 && <ChevronDown size={12} color="#535353" />}
+            {index === 2 && <ChevronDown size={12} className="text-gray-600" />}
           </div>
-        ))
-        }
-        <div className="flex items-center justify-center rounded-2xl w-[65px] h-[26px] hover:w-[66px] hover:h-[28px] cursor-pointer font-medium text-[12px] bg-black text-white">
+        ))}
+
+        <div className="px-2 md:px-4 py-0.5 md:py-1 rounded-2xl bg-black text-white text-[12px] font-medium cursor-pointer hover:scale-105 transition">
           Log in
         </div>
       </div>
