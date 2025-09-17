@@ -9,8 +9,8 @@ const inriaSerif = Inria_Serif({
 
 export default function Navbar() {
   return (
-    <nav className="mx-[73px] mt-[9px] h-[48px] bg-white flex justify-between text-black">
-      <div className="flex items-center justify-center gap-5 py-[11px]">
+    <nav className="px-6 sm:px-10 md:px-14 lg:px-16 mt-[9px] h-[48px] bg-white flex justify-between text-black">
+      <div className="hidden md:flex items-center justify-center gap-5 py-[11px]">
         {["Personal", "Business", "Company"].map((item, index) => (
           <button
             key={index}
@@ -22,14 +22,14 @@ export default function Navbar() {
         }
       </div>
 
-      <div className={`flex items-center justify-center text-[40px] ${inriaSerif.className}`}>
+      <div className={`flex items-center justify-center text-xl sm:text-2xl md:text-3xl lg:text-4xl ${inriaSerif.className}`}>
         Finnova
       </div>
 
       <div className="flex gap-6 items-center justify-center">
         {["Help", "Blog", "En"].map((item, index) => (
           <div key={index}
-            className="flex items-center justify-center font-bold text-[12px] text-[#535353]">
+            className="hidden md:flex items-center justify-center font-bold text-[12px] text-[#535353]">
             {item}
             {index == 2 && <ChevronDown size={12} color="#535353" />}
           </div>
