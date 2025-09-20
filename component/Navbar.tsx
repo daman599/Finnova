@@ -40,7 +40,7 @@ export default function Navbar() {
           </div>
         ))}
 
-        <div className="px-2 md:px-4 py-0.5 md:py-1 rounded-2xl bg-black text-white text-[12px] font-medium cursor-pointer hover:scale-105 transition">
+        <div className="px-2 md:px-4 py-0.5 md:py-1 rounded-full shadow-md shadow-[#058E00]/20 bg-black text-white text-[12px] font-medium cursor-pointer hover:scale-105 transition">
           Log in
         </div>
       </div>
