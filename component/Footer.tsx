@@ -12,7 +12,7 @@ const Extras: Obj[] = [
 
 export default function Footer() {
     return (
-        <div className="mx-6 lg:mx-16 mb-8 sm:mb-12 md:mb-24 bg-[#F6F6F6] rounded-3xl p-6 sm:p-12 md:p-16 flex flex-col lg:flex-row lg:justify-between">
+        <div className="mx-5 lg:mx-16 mb-8 sm:mb-12 md:mb-24 bg-[#F6F6F6] rounded-3xl p-6 md:p-12 flex justify-between items-end">
 
             <div className="flex flex-wrap gap-10 sm:gap-14 md:gap-20 lg:gap-28 items-start md:order-2">
                 {Extras.map((obj, index) => {
