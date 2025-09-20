@@ -1,11 +1,5 @@
-import { Inria_Serif } from "next/font/google";
+import { inriaSerif } from "@/lib/font";
 import { ChevronDown } from "lucide-react";
-
-const inriaSerif = Inria_Serif({
-  subsets: ["latin"],
-  weight: ["700"],
-  style: "normal",
-});
 
 export default function Navbar() {
 

@@ -1,10 +1,4 @@
-import { Inria_Serif } from "next/font/google";
-
-const inriaSerif = Inria_Serif({
-    subsets: ["latin"],
-    weight: ["700"],
-    style: "normal",
-});
+import { inriaSerif } from "@/lib/font";
 
 interface Obj {
     [key: string]: string[],
