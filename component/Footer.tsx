@@ -1,41 +1,49 @@
 import { inriaSerif } from "@/lib/font";
 
 interface Obj {
-    [key: string]: string[],
+    [key: string]: string[];
 }
 
 const Extras: Obj[] = [
-    { "Sections": ["Personal", "Business", "Company"] },
-    { "Help": ["Privacy", "Complaints", "Cookie Policy"] },
-    { "Comapny policies": ["Website terms", "Legal agreements", "Modern policy"] }
-]
+    { Sections: ["Personal", "Business", "Company"] },
+    { Help: ["Privacy", "Complaints", "Cookie Policy"] },
+    { "Company policies": ["Website terms", "Legal agreements", "Modern policy"] },
+];
 
 export default function Footer() {
     return (
-        <div className="mx-[60px] mb-[98px] bg-[#F6F6F6] flex rounded-3xl">
-            <div className={`pl-[51px] pb-[70px] pt-[270px] font-bold text-4xl ${inriaSerif.className}`}>Finnova</div>
+        <div className="mx-6 lg:mx-16 mb-8 sm:mb-12 md:mb-24 bg-[#F6F6F6] rounded-3xl p-6 sm:p-12 md:p-16 flex flex-col lg:flex-row lg:justify-between">
 
-            <div className="flex gap-44 pl-[217px]" >
+            <div className="flex flex-wrap gap-10 sm:gap-14 md:gap-20 lg:gap-28 items-start md:order-2">
                 {Extras.map((obj, index) => {
-                    const title: string = Object.keys(obj)[0];
-                    const items: string[] = obj[title];
+                    const title = Object.keys(obj)[0];
+                    const items = obj[title];
 
                     return (
-                        <div key={index} className="pt-[56px] flex flex-col gap-1">
-                            <p className="font-semibold text-xl">{title}</p>
+                        <div key={index} className="flex flex-col gap-1">
+                            <p className="font-semibold text-xs sm:text-sm md:text-base">
+                                {title}
+                            </p>
 
                             {items.map((item, i) => (
-                                <p key={i} className={`text-[#A0A0A0] text-lg ${i == 0 && "pt-5"}`}>
+                                <p
+                                    key={i}
+                                    className={`text-[#A0A0A0] text-xs sm:text-sm md:text-base ${i === 0 ? "pt-2" : ""
+                                        }`}
+                                >
                                     {item}
                                 </p>
                             ))}
                         </div>
                     );
                 })}
-
             </div>
 
-
+            <div
+                className={`mt-8 md:mt-0  md:self-end font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl ${inriaSerif.className}`}
+            >
+                Finnova
+            </div>
         </div>
     );
 }
