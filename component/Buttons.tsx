@@ -6,7 +6,7 @@ export default function Buttons() {
    const [btn, setBtn] = useState<string>("Personal");
 
    return (
-      <div className="flex gap-3 fixed right-18 bottom-8 font-medium text-xs">
+      <div className="hidden md:flex gap-3 fixed md:right-6 lg:right-18 bottom-8 font-medium text-xs">
          <button onClick={() => { setBtn("Personal") }}
             className={`${btn != "Personal" && "bg-black text-white"} 
             cursor-pointer rounded-2xl py-1 px-4 transition-all duration-300 ease-in-out`}>
