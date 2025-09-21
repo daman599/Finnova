@@ -40,7 +40,7 @@ export default function Footer() {
             </div>
 
             <div
-                className={`mt-8 md:mt-0  md:self-end font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl ${inriaSerif.className}`}
+                className={` font-bold text-lg sm:text-xl md:text-2xl lg:text-3xl ${inriaSerif.className}`}
             >
                 Finnova
             </div>
