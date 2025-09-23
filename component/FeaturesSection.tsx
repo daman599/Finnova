@@ -1,4 +1,5 @@
 import { US, EU } from "country-flag-icons/react/3x2";
+import { ShoppingCart, Train } from "lucide-react";
 
 export default function FeaturesSection() {
     return (
@@ -86,6 +87,42 @@ export default function FeaturesSection() {
                     </div>
                 </div>
 
+            </div>
+
+            <div className="bg-[#F6F6F6] w-[346px] h-[308px] rounded-4xl px-6 py-3">
+                <p className=" py-2 text-center font-medium text-xl">Accounts</p>
+                <p className="py-3 text-center font-medium text-base text-[#A0A0A0]">Effortlessly manage all your accounts in one place,
+                    giving you a clear and organized overview of your finances.</p>
+
+                <div className="bg-white w-[300px] h-[117px] rounded-2xl mt-5">
+
+                    <div className="flex items-center gap-4 px-5 py-2 ">
+                        <div className="w-9 h-9 rounded-full bg-[#328072] flex items-center justify-center">
+                            <ShoppingCart />
+                        </div>
+
+                        <div className="flex items-center justify-between gap-24">
+                            <p>Shopping</p>
+
+                            <p className="font-medium text-xs text-[#B5B5B5] ">$200.63</p>
+
+                        </div>
+                    </div>
+
+                    <div className="flex items-center gap-4 px-5 py-2 ">
+                        <div className="w-9 h-9 rounded-full bg-[#B780FF] flex items-center justify-center">
+                            <Train />
+                        </div>
+
+                        <div className="flex items-center justify-between gap-30">
+
+                            <p>Travel</p>
+
+                            <p className="font-medium text-xs text-[#B5B5B5] ">$100.63</p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
 
