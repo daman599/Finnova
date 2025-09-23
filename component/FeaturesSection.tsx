@@ -3,7 +3,7 @@ import { ShoppingCart, Train } from "lucide-react";
 
 export default function FeaturesSection() {
     return (
-        <div className="flex items-center justify-center py-20 gap-8 ">
+        <div className="flex items-center justify-center my-48 gap-8 ">
 
             <div className="bg-[#F6F6F6] w-[346px] h-[308px] rounded-4xl px-6 py-3">
                 <p className=" py-2 text-center font-medium text-xl">Analytics</p>
@@ -127,6 +127,5 @@ export default function FeaturesSection() {
 
 
         </div>
-
     );
 }
