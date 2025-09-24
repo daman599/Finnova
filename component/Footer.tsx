@@ -5,8 +5,8 @@ interface Obj {
 }
 
 const Extras: Obj[] = [
-    { Sections: ["Personal", "Business", "Company"] },
-    { Help: ["Privacy", "Complaints", "Cookie Policy"] },
+    { "Sections": ["Personal", "Business", "Company"] },
+    { "Help": ["Privacy", "Complaints", "Cookie Policy"] },
     { "Company policies": ["Website terms", "Legal agreements", "Modern policy"] },
 ];
 

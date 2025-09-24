@@ -4,7 +4,6 @@ import Image from "next/image";
 export default function Card() {
     return (
         <div className="flex items-center justify-between px-6 md:px-12 lg:px-20 py-20">
-            {/* Left text content */}
             <div className="flex flex-col max-w-xl pl-24">
                 <div className="flex items-center font-medium text-sm text-[#058E00] p-1 rounded-full backdrop-blur-md bg-white shadow-lg shadow-[#058E00]/40 mb-6 w-fit">
                     <Dot size={30} className="animate-ping" />

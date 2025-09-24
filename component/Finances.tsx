@@ -34,7 +34,7 @@ export default function Finances() {
           </p>
         </div>
 
-        <div className="bg-[#F6F6F6] rounded-4xl  h-[680px] w-[510px] mb-3 ml-[330px] mt-[85px] px-[56px] py-[74px]">
+        <div className="bg-[#F6F6F6] rounded-4xl  h-[680px] w-[510px] mb-5 ml-[330px] mt-[85px] px-[56px] py-[74px]">
 
           <div className="bg-white rounded-3xl w-[400px] h-[520px] pl-9 ">
             <p className="font-medium text-xl pt-20">Amount</p>
