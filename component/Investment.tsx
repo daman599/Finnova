@@ -1,5 +1,6 @@
 import { Dot } from "lucide-react";
 import Image from "next/image";
+import { US, EU, JP } from "country-flag-icons/react/3x2";
 
 export default function Investment() {
   return (
@@ -59,13 +60,59 @@ export default function Investment() {
             <p className="font-medium text-xs text-[#9F9F9F]">Explore transfers</p>
           </div>
 
+          <div className="relative flex flex-col items-center mt-8">
+            {/* Japan Card */}
+            <div className="bg-white rounded-4xl flex px-6 py-2 shadow-lg shadow-[#A0A0A0] w-fit h-fit relative z-20 ">
+              <JP className="w-9 h-9 " />
+              <div className="flex justify-between gap-24">
+                <div className="flex flex-col px-4">
+                  <p className="font-medium text-base">Japanese Yen</p>
+                  <p className="font-normal text-xs text-[#B5B5B5]">JPY</p>
+                </div>
+                <div className="flex items-center justify-center">
+                  <p className="font-medium text-xs">+¥1500.00</p>
+                </div>
+              </div>
+            </div>
+
+            {/* USD Card */}
+            <div className="bg-white rounded-4xl flex px-6 py-2 shadow-lg shadow-[#A0A0A0] w-fit h-fit -mt-3 relative z-10">
+              <US className="w-9 h-9 " />
+              <div className="flex justify-between gap-24">
+                <div className="flex flex-col px-4">
+                  <p className="font-medium text-base">US Dollar</p>
+                  <p className="font-normal text-xs text-[#B5B5B5]">USD</p>
+                </div>
+                <div className="flex items-center justify-center">
+                  <p className="font-medium text-xs">+$290.99</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Euro Card */}
+            <div className="bg-white rounded-4xl flex px-6 py-2 shadow-lg shadow-[#A0A0A0] w-fit h-fit -mt-5 relative z-5">
+              <EU className="w-9 h-9 " />
+              <div className="flex justify-between gap-24">
+                <div className="flex flex-col px-4">
+                  <p className="font-medium text-base">Euro</p>
+                  <p className="font-normal text-xs text-[#B5B5B5]">EUR</p>
+                </div>
+                <div className="flex items-center justify-center">
+                  <p className="font-medium text-xs">-€20.99</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
           <div className="relative">
             <Image
               src={"/earth.svg"}
               width={500}
               height={100}
               alt={"earth"}
-              className="absolute top-62 "
+              className="absolute top-22"
             />
 
           </div>
