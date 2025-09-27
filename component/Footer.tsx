@@ -1,13 +1,14 @@
 import { inriaSerif } from "@/lib/font";
 
 interface Obj {
-    [key: string]: string[];
+    label: string;
+    arr: string[];
 }
 
 const Extras: Obj[] = [
-    { "Sections": ["Personal", "Business", "Company"] },
-    { "Help": ["Privacy", "Complaints", "Cookie Policy"] },
-    { "Company policies": ["Website terms", "Legal agreements", "Modern policy"] },
+    { label: "Sections", arr: ["Personal", "Business", "Company"] },
+    { label: "Help", arr: ["Privacy", "Complaints", "Cookie Policy"] },
+    { label: "Company policies", arr: ["Website terms", "Legal agreements", "Modern policy"] },
 ];
 
 export default function Footer() {
@@ -16,13 +17,12 @@ export default function Footer() {
 
             <div className="flex flex-wrap gap-10 sm:gap-14 md:gap-20 lg:gap-28 items-start md:order-2">
                 {Extras.map((obj, index) => {
-                    const title = Object.keys(obj)[0];
-                    const items = obj[title];
+                    const items = obj.arr;
 
                     return (
                         <div key={index} className="flex flex-col gap-1">
                             <p className="font-semibold text-xs sm:text-sm md:text-base">
-                                {title}
+                                {obj.label}
                             </p>
 
                             {items.map((item, i) => (
