@@ -39,7 +39,7 @@ export default function Hero() {
                             </div>
                         </div>
 
-                        <div className="w-0.5 h-64 bg-[#202020] mx-16"></div>
+                        <div className="w-0.5 h-72 bg-[#202020] mx-16"></div>
 
                         <div className="py-5">
                             <div className="flex justify-between">
@@ -69,7 +69,7 @@ export default function Hero() {
                             </div>
 
                             <div className="flex gap-8 ">
-                                <div className="bg-[#0D0C0C] rounded-2xl w-fit px-5 py-2">
+                                <div className="bg-[#0D0C0C] rounded-2xl w-fit h-fit px-5 py-3">
 
                                     <div className="flex gap-26">
                                         <p className="font-medium text-sm text-[#7A7A7A]">My Cards</p>
@@ -83,7 +83,7 @@ export default function Hero() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="flex gap-2 pt-10">
+                                    <div className="flex gap-2 pt-10 py-5">
 
                                         <Image
                                             src={"/small-card.svg"}
@@ -92,7 +92,7 @@ export default function Hero() {
                                             alt={"card"}
                                         />
 
-                                        <div className="flex flex-col">
+                                        <div className="flex flex-col ">
                                             <p className="font-normal text-xs text-[#AFAFA7]">1,000.908 USD</p>
                                             <div className="text-[#C1C1C1] flex items-center justify-center gap-1">
                                                 <div className="w-2 h-2 rounded-full bg-[#C1C1C1]"></div>
@@ -108,14 +108,14 @@ export default function Hero() {
                                         </div>
 
                                         <div className="pl-10">
-                                            <Triangle color={"white"} size={10} />
-                                            <Triangle color={"white"} size={10} className="rotate-180" />
+                                            <Triangle color={"white"} size={8} />
+                                            <Triangle color={"white"} size={8} className="rotate-180" />
                                         </div>
                                     </div>
 
                                 </div>
 
-                                <div className="flex flex-col space-y-4 ">
+                                <div className="flex flex-col space-y-6 ">
                                     <p className="font-medium text-xl text-[#F5F5F5]">Card Balance (USD)</p>
                                     <p className="font-normal text-3xl text-[#C6C6C6]">$6,950</p>
 
@@ -137,8 +137,8 @@ export default function Hero() {
                                         </div>
                                     </div>
 
-                                    <div className="flex items-center justify-center gap-3">
-                                        <div className="w-36 h-36   bg-gradient-to-t from-black via-black/30 to-[#a5229c] rounded-full flex items-center justify-center">
+                                    <div className="flex items-center justify-center gap-3 py-3">
+                                        <div className="w-36 h-36 bg-gradient-to-t from-black via-black/30 to-[#a5229c] rounded-full flex items-center justify-center">
                                             <div className="w-28 h-28 bg-black rounded-full flex items-center justify-center">
                                                 <div className="w-26 h-26 bg-gradient-to-t from-black via-black/30 to-[#01248b] rounded-full flex items-center justify-center">
                                                     <div className="w-20 h-20 bg-black rounded-full flex items-center justify-center">
