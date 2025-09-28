@@ -140,14 +140,13 @@ export default function Hero() {
                         </div>
                     </div>
 
-                </div>
-
-
-                <div className="absolute bottom-6 left-6 flex items-center gap-2">
-                    <div className="bg-white rounded-full p-1">
-                        <ArrowDown color="black" className="animate-bounce" />
+                    <div className="absolute bottom-5 left-9 flex items-center gap-2">
+                        <div className="bg-white rounded-full p-1">
+                            <ArrowDown color="black" className="animate-bounce" />
+                        </div>
+                        <p className="text-white font-medium text-xs">Scroll</p>
                     </div>
-                    <p className="text-white font-medium text-xs">Scroll</p>
+
                 </div>
 
             </div>
