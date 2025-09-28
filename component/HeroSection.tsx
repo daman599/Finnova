@@ -1,4 +1,5 @@
-import { ArrowDown, ChevronDown } from "lucide-react";
+import { ArrowDown, ChevronDown, Triangle, Headphones, Bell } from "lucide-react";
+import Image from "next/image";
 
 export default function Hero() {
     return (
@@ -8,7 +9,7 @@ export default function Hero() {
                 <div className="w-full h-full relative "
                     style={{
                         backgroundImage: `linear-gradient(to right,rgba(255,255,255,0.07)  1px, transparent 1px),
-                         linear-gradient(to bottom, rgba(255,255,255,0.07)  1px, transparent 1px)`,
+                         linear-gradient(to bottom, rgba(255,255,255,0.07)  1px,s transparent 1px)`,
                         backgroundSize: '95px 95px'
                     }}>
 
@@ -24,7 +25,7 @@ export default function Hero() {
                         </div>
                     </div>
 
-                    <div className="w-[1112px] h-fit mt-8 flex rounded-t-4xl bg-gradient-to-tl mx-auto from-black to-[#18320a] pb-0.5">
+                    <div className="w-[1112px] h-fit mt-14 flex rounded-t-4xl bg-gradient-to-tl mx-auto from-black to-[#143803] pb-0.5 ">
                         <div className="px-10 py-5">
                             <p className="font-normal text-white text-xl">Finnova</p>
                             <div className="pt-8 flex flex-col  space-y-2">
@@ -38,18 +39,117 @@ export default function Hero() {
                             </div>
                         </div>
 
-                        <div className="w-0.5 h-80 bg-[#7A7A7A] mx-16"></div>
-                    </div>
+                        <div className="w-0.5 h-64 bg-[#202020] mx-16"></div>
 
+                        <div className="py-5">
+                            <div className="flex justify-between">
+                                <p className="font-normal text-white text-xl">Cards</p>
+                                <div className="flex items-center gap-4">
+                                    <div className="bg-[#232323] w-fit h-fit rounded-full p-1">
+                                        <Headphones color={"#F5F5F5"} />
+                                    </div>
+                                    <div className="bg-[#232323] w-fit h-fit rounded-full p-1">
+                                        <Bell color={"#F5F5F5"} />
+                                    </div>
+                                    <div className="w-fit rounded-xl flex h-fit px-3 py-1 gap-2 text-[#F5F5F5] font-normal text-xs bg-[#232323]">
+                                        <p>John Smith</p>
+                                        <ChevronDown size={15} />
+                                    </div>
+                                </div>
+                            </div>
 
-                    <div className="absolute bottom-6 left-6 flex items-center gap-2">
-                        <div className="bg-white rounded-full p-1">
-                            <ArrowDown color="black" className="animate-bounce" />
+                            <div className="flex py-6">
+                                <div className="bg-white w-fit rounded-full px-3 py-2">
+                                    <p className="text-[#7A7A7A] font-medium text-sm">My Cards</p>
+                                </div>
+
+                                <div className=" w-fit rounded-full px-3 py-2">
+                                    <p className="text-[#7A7A7A] font-medium text-sm">All Cards</p>
+                                </div>
+                            </div>
+
+                            <div className="flex gap-8 ">
+                                <div className="bg-[#0D0C0C] rounded-2xl w-fit px-5 py-2">
+
+                                    <div className="flex gap-26">
+                                        <p className="font-medium text-sm text-[#7A7A7A]">My Cards</p>
+                                        <div className="flex items-center gap-2">
+                                            <div className="w-5 h-2 rounded-full bg-white"></div>
+                                            <div className="w-2 h-2 rounded-full bg-[#535353]"></div>
+                                            <div className="w-2 h-2 rounded-full bg-[#535353]"></div>
+
+                                            <div className=" w-6 h-6 flex item-center justify-center rounded-full bg-[#395828]">
+                                                <span className="font-bold text-base">+</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="flex gap-2 pt-10">
+
+                                        <Image
+                                            src={"/small-card.svg"}
+                                            width={77}
+                                            height={46}
+                                            alt={"card"}
+                                        />
+
+                                        <div className="flex flex-col">
+                                            <p className="font-normal text-xs text-[#AFAFA7]">1,000.908 USD</p>
+                                            <div className="text-[#C1C1C1] flex items-center justify-center gap-1">
+                                                <div className="w-2 h-2 rounded-full bg-[#C1C1C1]"></div>
+                                                <div className="w-2 h-2 rounded-full bg-[#C1C1C1]"></div>
+                                                <div className="w-2 h-2 rounded-full bg-[#C1C1C1]"></div>
+                                                <div className="w-2 h-2 rounded-full bg-[#C1C1C1]"></div>
+
+                                                <span className="text-base">6</span>
+                                                <span className="text-base">7</span>
+                                                <span className="text-lg">3</span>
+                                                <span className="text-xl">5</span>
+                                            </div>
+                                        </div>
+
+                                        <div className="pl-10">
+                                            <Triangle color={"white"} size={10} />
+                                            <Triangle color={"white"} size={10} className="rotate-180" />
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div className="flex flex-col space-y-4 ">
+                                    <p className="font-medium text-xl text-[#F5F5F5]">Card Balance (USD)</p>
+                                    <p className="font-normal text-3xl text-[#C6C6C6]">$6,950</p>
+
+                                    <div className="flex gap-6 items-center">
+                                        <p className="text-nomral text-xs text-[#353434]">Balance  Details</p>
+                                        <div className="flex items-center justify-center gap-2 text-[#AFAFA7] font-normal text-xs bg-[#232323] px-3 py-1 rounded-xl w-fit ">
+                                            <p>Today</p>
+                                            <ChevronDown size={15} />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="flex gap-10 ml-10">
+                                    <p className="font-medium text-xl text-[#F5F5F5]">Statistics</p>
+                                    <div className="w-fit rounded-xl flex h-fit px-3 py-1 gap-2 text-[#AFAFA7] font-normal text-xs bg-[#232323]">
+                                        <p>Week</p>
+                                        <ChevronDown size={15} />
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
-                        <p className="text-white font-medium text-xs">Scroll</p>
                     </div>
 
                 </div>
+
+
+                <div className="absolute bottom-6 left-6 flex items-center gap-2">
+                    <div className="bg-white rounded-full p-1">
+                        <ArrowDown color="black" className="animate-bounce" />
+                    </div>
+                    <p className="text-white font-medium text-xs">Scroll</p>
+                </div>
+
             </div>
         </>
     );
