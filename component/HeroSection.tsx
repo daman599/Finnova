@@ -128,28 +128,45 @@ export default function Hero() {
                                     </div>
                                 </div>
 
-                                <div className="flex gap-10 ml-10">
-                                    <p className="font-medium text-xl text-[#F5F5F5]">Statistics</p>
-                                    <div className="w-fit rounded-xl flex h-fit px-3 py-1 gap-2 text-[#AFAFA7] font-normal text-xs bg-[#232323]">
-                                        <p>Week</p>
-                                        <ChevronDown size={15} />
+                                <div className="flex flex-col gap-5 ml-10">
+                                    <div className="flex gap-10">
+                                        <p className="font-medium text-xl text-[#F5F5F5]">Statistics</p>
+                                        <div className="w-fit rounded-xl flex h-fit px-3 py-1 gap-2 text-[#AFAFA7] font-normal text-xs bg-[#232323]">
+                                            <p>Week</p>
+                                            <ChevronDown size={15} />
+                                        </div>
                                     </div>
+
+                                    <div className="flex items-center justify-center gap-3">
+                                        <div className="w-36 h-36   bg-gradient-to-t from-black via-black/30 to-[#a5229c] rounded-full flex items-center justify-center">
+                                            <div className="w-28 h-28 bg-black rounded-full flex items-center justify-center">
+                                                <div className="w-26 h-26 bg-gradient-to-t from-black via-black/30 to-[#01248b] rounded-full flex items-center justify-center">
+                                                    <div className="w-20 h-20 bg-black rounded-full flex items-center justify-center">
+                                                        <div className="w-18 h-18 bg-gradient-to-t from-black via-black/30 to-[#5a7d00] flex items-center justify-center rounded-full">
+                                                            <div className="w-8 h-8 bg-black rounded-full"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
 
                         </div>
                     </div>
 
-                    <div className="absolute bottom-5 left-9 flex items-center gap-2">
+                    <div className="absolute bottom-7 left-9 flex items-center gap-2">
                         <div className="bg-white rounded-full p-1">
                             <ArrowDown color="black" className="animate-bounce" />
                         </div>
                         <p className="text-white font-medium text-xs">Scroll</p>
                     </div>
 
-                </div>
+                </div >
 
-            </div>
+            </div >
         </>
     );
 }
