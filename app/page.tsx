@@ -11,12 +11,12 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <FeaturesSection />
       <Finances />
       <Card />
       <CardFeatures />
       <Investment />
       <Crypto />
+      <FeaturesSection />
       <Footer />
     </>
   );
