@@ -8,8 +8,8 @@ export default function Hero() {
 
                 <div className="w-full h-full relative "
                     style={{
-                        backgroundImage: `linear-gradient(to right,rgba(255,255,255,0.07)  1px, transparent 1px),
-                         linear-gradient(to bottom, rgba(255,255,255,0.07)  1px,s transparent 1px)`,
+                        backgroundImage: `linear-gradient(to right,rgba(255,255,255,0.05)  1px, transparent 1px),
+                         linear-gradient(to bottom, rgba(255,255,255,0.05)  1px, transparent 1px)`,
                         backgroundSize: '95px 95px'
                     }}>
 

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/component/Navbar";
+import Buttons from "@/component/Buttons";
 import { Inter } from "next/font/google";
 
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["300"], 
+  weight: ["300"],
   variable: "--font-inter",
 });
 
@@ -21,11 +22,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body 
-      className={`${inter.variable}`}
+      <body
+        className={`${inter.variable}`}
       >
-        <Navbar/>
+        <Navbar />
         {children}
+        <Buttons />
       </body>
     </html>
   );
