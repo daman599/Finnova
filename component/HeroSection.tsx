@@ -29,7 +29,7 @@ export default function Hero() {
 
             <div className="absolute inset-0 bg-grid" />
 
-            <div className="flex flex-col items-center justify-center space-y-3 md:space-y-6">
+            <div className="flex flex-col items-center justify-center space-y-3 md:space-y-6 z-20">
 
                 <h1 className="font-normal text-4xl md:text-7xl lg:text-8xl text-center max-w-2xl py-2 mt-7
                            bg-gradient-to-r from-[#FFFFFF] via-[#999999] to-[#999999] bg-clip-text text-transparent"
@@ -43,9 +43,9 @@ export default function Hero() {
                 </div>
             </div>
 
-            <div className="relative w-full p-2">
+            <div className="relative mx-auto w-full p-2 mt-10 md:mt-14">
                 {/* block*/}
-                <div className="max-w-5xl px-5 h-fit mt-14 flex flex-col md:flex-row mx-auto rounded-t-4xl bg-gradient-to-tl from-black to-[#143803] z-20">
+                <div className="relative max-w-6xl px-5 h-fit flex flex-col md:flex-row  rounded-t-4xl bg-gradient-to-tl from-black to-[#143803] z-20">
 
                     <div className="hidden px-7 pt-5 lg:flex flex-col items-start">
 
@@ -61,10 +61,10 @@ export default function Hero() {
                         </div>
                     </div>
 
-                    <div className="hidden lg:block w-0.5 h-80 mx-4 md:mx-8 lg:mx-10 bg-gradient-to-t from-black via-[#2c2d2c] to-[#143803] "></div>
+                    <div className="hidden lg:block w-0.5 h-80 mx-4 md:mx-8 bg-gradient-to-t from-black via-[#2c2d2c] to-[#143803] "></div>
 
-                    <div className="pt-5 flex flex-col space-y-5">
-                        <div className="flex justify-between items-center">
+                    <div className="pt-5 flex flex-col space-y-5 w-full">
+                        <div className="flex justify-between gap-10 items-center">
 
                             <p className="font-normal text-white text-base sm:text-lg md:text-xl">Cards</p>
 
@@ -95,9 +95,9 @@ export default function Hero() {
                             ))}
                         </div>
 
-                        <div className="flex flex-col md:flex-row space-y-5 space-x-3">
+                        <div className="flex flex-col space-y-5 md:flex-row gap-3 ">
 
-                            <div className="bg-[#0D0C0C] rounded-2xl w-full sm:max-w-4xl h-fit px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 flex flex-col">
+                            <div className="bg-[#0D0C0C] rounded-2xl w-full sm:w-fit max-w-4xl h-fit px-4 sm:px-6 md:px-7 lg:px-8 py-3 sm:py-4 md:py-5 lg:py-6 flex flex-col">
                                 {/* Top Bar */}
                                 <div className="flex justify-between items-center lg:gap-3">
                                     <p className="font-medium text-xs sm:text-sm md:text-base text-[#7A7A7A]">My Cards</p>
@@ -148,19 +148,20 @@ export default function Hero() {
                             </div>
 
                             <div className="flex flex-col max-w-4xl space-y-3 md:space-y-6 ">
-                                <span className="font-medium text-sm sm:text-base md:text-xl text-[#F5F5F5]">Card Balance (USD)</span>
-                                <span className="font-normal text-xl sm:text-2xl md:text-3xl text-[#C6C6C6]">$6,950</span>
+                                <span className="font-medium text-sm sm:text-base md:text-lg lg:text-xl text-[#F5F5F5]">Card Balance (USD)</span>
+                                <span className="font-normal text-xl sm:text-xl md:text-2xl lg:text-3xl text-[#C6C6C6]">$6,950</span>
 
-                                <div className="flex justify-between gap-4 sm:gap-6 md:gap-8 items-center">
+                                <div className="flex justify-between gap-10 md:gap-8 items-center">
                                     <p className="text-nomral text-xs text-[#353434]">Balance  Details</p>
-                                    <div className="flex items-center justify-center gap-2 bg-[#232323] px-2 md:px-4 py-1 rounded-full w-fit ">
+                                    <div className="flex items-center justify-center gap-2 bg-[#232323] px-3 py-1 rounded-full w-fit ">
                                         <p className="text-[#AFAFA7] font-normal text-xs">Today</p>
                                         <ChevronDown size={13} color={"#AFAFA7"} />
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="flex flex-col gap-5">
+
+                            <div className="flex flex-col  gap-3 md:gap-5">
 
                                 <div className="flex justify-between items-center gap-16">
                                     <p className="font-medium text-sm sm:text-base md:text-xl text-[#F5F5F5]">Statistics</p>
@@ -190,10 +191,10 @@ export default function Hero() {
                         </div>
                     </div>
                 </div>
-                {/* block*/}
 
-                <div className="absolute bottom-6 left-2.5 flex items-center gap-2 z-10">
-                    <div className="bg-white rounded-full p-1">
+                {/* block*/}
+                <div className="absolute bottom-2 md:bottom-6 left-2.5 flex items-center gap-1 md:gap-2 z-10 shadow-lg">
+                    <div className="bg-white rounded-full p-0.5 md:p-1">
                         <ArrowDown className="text-black animate-bounce" />
                     </div>
                     <span className="text-white text-xs font-medium">Scroll</span>
