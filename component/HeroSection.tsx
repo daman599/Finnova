@@ -25,7 +25,7 @@ const Cards: cardType[] = [
 
 export default function Hero() {
     return (
-        <section className="bg-black max-w-7xl w-full min-h-[90vh] flex flex-col items-center justify-center my-10 md:my-20 mx-auto rounded-4xl overflow-hidden z-20 p-4">
+        <section className="bg-black relative max-w-7xl w-full min-h-[100vh] flex flex-col items-center justify-center my-10 md:my-20 mx-auto rounded-4xl overflow-hidden z-20 p-4">
 
             <div className="absolute inset-0 bg-grid" />
 
@@ -194,7 +194,7 @@ export default function Hero() {
                 </div>
 
                 {/* scroll indicator*/}
-                <div className=" bottom-2 md:bottom-6 left-4 md:left-2.5 flex items-center gap-1 md:gap-2 z-10 shadow-lg">
+                <div className=" bottom-2 md:bottom-6 left-4 md:left-2.5 flex items-center gap-1 md:gap-2 z-10 ">
                     <div className="bg-white rounded-full p-0.5 md:p-1">
                         <ArrowDown className="text-black animate-bounce" />
                     </div>
