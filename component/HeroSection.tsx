@@ -100,7 +100,7 @@ export default function Hero() {
 
                             <div className="bg-[#0D0C0C] rounded-2xl w-full sm:w-fit max-w-4xl h-fit px-4 sm:px-6 md:px-7 lg:px-8 py-3 sm:py-4 md:py-5 lg:py-6 flex flex-col">
                                 {/* Top Bar */}
-                                <div className="flex justify-between items-center lg:gap-3">
+                                <div className="flex justify-between items-center gap-3">
                                     <p className="font-medium text-xs sm:text-sm md:text-base text-[#7A7A7A]">My Cards</p>
                                     <div className="flex items-center gap-2">
                                         <div className="w-3 h-1 md:w-5 md:h-1 rounded-full bg-white"></div>
@@ -114,7 +114,7 @@ export default function Hero() {
                                 </div>
 
                                 {/* Inner small card */}
-                                <div className="flex items-center gap-3 sm:gap-1 md:py-5 lg:py-7">
+                                <div className="flex items-center gap-3 py-5 lg:py-7">
                                     <Image
                                         src={"/small-card.svg"}
                                         width={70}
