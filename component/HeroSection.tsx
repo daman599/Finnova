@@ -1,4 +1,4 @@
-import { ArrowDown, ChevronDown, Triangle, Headphones, Bell } from "lucide-react";
+import { ArrowDown, ChevronDown, Headphones, Bell } from "lucide-react";
 import Image from "next/image";
 
 interface iconsType {
@@ -43,18 +43,18 @@ export default function Hero() {
                 </div>
             </div>
 
-            <div className="relative mx-auto w-full p-2 mt-10 md:mt-14">
+            <div className="relative w-full p-2 mt-10 md:mt-14">
                 {/* block*/}
-                <div className="relative max-w-6xl px-5 h-fit flex flex-col md:flex-row  rounded-t-4xl bg-gradient-to-tl from-black to-[#143803] z-20">
+                <div className="relative max-w-5xl px-5 h-full mx-auto flex flex-col md:flex-row rounded-t-4xl bg-gradient-to-tl from-black to-[#143803] z-20">
 
                     <div className="hidden px-7 pt-5 lg:flex flex-col items-start">
 
-                        <p className="font-normal text-white text-base sm:text-lg md:text-xl">Finnova</p>
-                        <div className="pt-8 flex flex-col items-start space-y-1 md:space-y-2">
+                        <p className="font-normal text-white text-xl">Finnova</p>
+                        <div className="pt-8 flex flex-col items-start space-y-2">
                             {Features.map((feature, i) => (
-                                <div key={i} className="flex items-center gap-1 md:gap-2">
-                                    <ChevronDown size={15} color={"#7A7A7A"} />
-                                    <p className="font-normal text-sm sm:text-base md:text-xl text-[#7A7A7A]">{feature}</p>
+                                <div key={i} className="flex items-center gap-1 lg:gap-2">
+                                    <ChevronDown size={12} color={"#7A7A7A"} />
+                                    <p className="font-normal text-base text-[#7A7A7A]">{feature}</p>
                                 </div>
                             ))
                             }
@@ -73,8 +73,9 @@ export default function Hero() {
                                     {Icons.map((obj, i) => {
                                         const Icon = obj.icon;
                                         return (
-                                            <div key={i} className="w-fit h-fit bg-[#232323] rounded-full p-1.5">
+                                            <div key={i} className="relative w-fit h-fit bg-[#232323] rounded-full p-1.5">
                                                 <Icon color={obj.color} size={12} />
+                                                {i == 1 && <div className="absolute top-0 right-0 block  ring-2 ring-[#232323]  z-10 w-2 h-2 rounded-full bg-[#1f968e]"></div>}
                                             </div>
                                         );
                                     })}
@@ -95,7 +96,7 @@ export default function Hero() {
                             ))}
                         </div>
 
-                        <div className="flex flex-col space-y-5 md:flex-row gap-3 ">
+                        <div className="flex flex-col space-y-5 md:flex-row justify-between gap-3 ">
 
                             <div className="bg-[#0D0C0C] rounded-2xl w-full sm:w-fit max-w-4xl h-fit px-4 sm:px-6 md:px-7 lg:px-8 py-3 sm:py-4 md:py-5 lg:py-6 flex flex-col">
                                 {/* Top Bar */}
@@ -113,7 +114,7 @@ export default function Hero() {
                                 </div>
 
                                 {/* Inner small card */}
-                                <div className="flex items-center gap-3 sm:gap-1 py-6">
+                                <div className="flex items-center gap-3 sm:gap-1 md:py-5 lg:py-7">
                                     <Image
                                         src={"/small-card.svg"}
                                         width={70}
@@ -147,21 +148,21 @@ export default function Hero() {
                                 </div>
                             </div>
 
-                            <div className="flex flex-col max-w-4xl space-y-3 md:space-y-6 ">
+                            <div className="flex flex-col max-w-4xl space-y-3 md:space-y-5 lg:space-y-6 ">
                                 <span className="font-medium text-sm sm:text-base md:text-lg lg:text-xl text-[#F5F5F5]">Card Balance (USD)</span>
                                 <span className="font-normal text-xl sm:text-xl md:text-2xl lg:text-3xl text-[#C6C6C6]">$6,950</span>
 
                                 <div className="flex justify-between gap-10 md:gap-8 items-center">
-                                    <p className="text-nomral text-xs text-[#353434]">Balance  Details</p>
-                                    <div className="flex items-center justify-center gap-2 bg-[#232323] px-3 py-1 rounded-full w-fit ">
-                                        <p className="text-[#AFAFA7] font-normal text-xs">Today</p>
-                                        <ChevronDown size={13} color={"#AFAFA7"} />
+                                    <p className="text-nomral text-[10px] md:text-xs text-[#353434]">Balance  Details</p>
+                                    <div className="flex items-center justify-center gap-2 bg-[#232323] px-2 md:px-3 py-1 rounded-full w-fit ">
+                                        <p className="text-[#AFAFA7] font-normal text-[10px] md:text-xs">Today</p>
+                                        <ChevronDown size={12} color={"#AFAFA7"} />
                                     </div>
                                 </div>
                             </div>
 
 
-                            <div className="flex flex-col  gap-3 md:gap-5">
+                            <div className="flex flex-col  gap-3 md:gap-6 ">
 
                                 <div className="flex justify-between items-center gap-16">
                                     <p className="font-medium text-sm sm:text-base md:text-xl text-[#F5F5F5]">Statistics</p>
@@ -173,12 +174,12 @@ export default function Hero() {
                                 </div>
 
                                 <div className="flex items-center justify-center pt-3">
-                                    <div className="w-36 h-36 bg-gradient-to-t from-black via-black/30 to-[#a5229c] rounded-full flex items-center justify-center">
-                                        <div className="w-28 h-28 bg-black rounded-full flex items-center justify-center">
-                                            <div className="w-26 h-26 bg-gradient-to-t from-black via-black/30 to-[#01248b] rounded-full flex items-center justify-center">
-                                                <div className="w-20 h-20 bg-black rounded-full flex items-center justify-center">
-                                                    <div className="w-18 h-18 bg-gradient-to-t from-black via-black/30 to-[#5a7d00] flex items-center justify-center rounded-full">
-                                                        <div className="w-8 h-8 bg-black rounded-full"></div>
+                                    <div className="w-28 h-28 lg:w-36 lg:h-36 bg-gradient-to-t from-black via-black/30 to-[#a5229c] rounded-full flex items-center justify-center">
+                                        <div className="w-20 h-20 lg:w-28 lg:h-28 bg-black rounded-full flex items-center justify-center">
+                                            <div className="w-18 h-18 lg:w-26 lg:h-26 bg-gradient-to-t from-black via-black/30 to-[#01248b] rounded-full flex items-center justify-center">
+                                                <div className="w-12 h-12 lg:w-20 lg:h-20 bg-black rounded-full flex items-center justify-center">
+                                                    <div className="w-10 h-10 lg:w-18 lg:h-18 bg-gradient-to-t from-black via-black/30 to-[#5a7d00] flex items-center justify-center rounded-full">
+                                                        <div className="w-2 h-2 lg:w-8 lg:h-8 bg-black rounded-full"></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -192,8 +193,8 @@ export default function Hero() {
                     </div>
                 </div>
 
-                {/* block*/}
-                <div className="absolute bottom-2 md:bottom-6 left-2.5 flex items-center gap-1 md:gap-2 z-10 shadow-lg">
+                {/* scroll indicator*/}
+                <div className=" bottom-2 md:bottom-6 left-4 md:left-2.5 flex items-center gap-1 md:gap-2 z-10 shadow-lg">
                     <div className="bg-white rounded-full p-0.5 md:p-1">
                         <ArrowDown className="text-black animate-bounce" />
                     </div>
