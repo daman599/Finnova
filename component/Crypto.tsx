@@ -6,10 +6,10 @@ export default function Crypto() {
 
             <div className="flex flex-col space-y-4 w-full md:max-w-xl items-start justify-center">
 
-                <div className="flex items-center justify-center gap-3 px-3 py-2 rounded-full backdrop-blur-md bg-white shadow-lg shadow-[#058E00]/40 w-fit">
-                    <div className="w-1 h-1 rounded-full bg-[#058E00] ring-1 ring-[#2dd327] animate-ping
-                    shadow-background "></div>
-                    <p className="font-medium text-xs md:text-sm text-[#058E00]">Cryptocurrency</p>
+                <div className="flex items-center justify-center gap-3 px-5 py-2 rounded-full backdrop-blur-md bg-white shadow-lg shadow-[#058E00]/40 w-fit">
+                    <span className="w-1 h-1 rounded-full bg-[#058E00] ring-1 ring-[#2dd327] animate-ping
+                    shadow-background "></span>
+                    <span className="font-medium text-xs md:text-sm text-[#058E00]">Cryptocurrency</span>
                 </div>
 
                 <div className="flex flex-col items-start justify-center space-y-3 md:space-y-5">
@@ -22,8 +22,8 @@ export default function Crypto() {
                         Invest in the future: safe and profitable crypto assets for everyone.
                     </p>
 
-                    <div className="bg-black w-fit px-3 py-1 rounded-2xl ">
-                        <p className="font-medium text-xs text-[#9F9F9F]">Get started</p>
+                    <div className="bg-black w-fit px-3 py-1 flex items-center justify-center rounded-2xl ">
+                        <span className="font-medium text-xs text-[#9F9F9F]">Get started</span>
                     </div>
                 </div>
             </div>
