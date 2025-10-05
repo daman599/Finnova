@@ -39,7 +39,7 @@ const CountryCards: countryCardType[] = [
 
 export default function Investment() {
   return (
-    <section className="flex flex-col items-center space-y-20 py-16 sm:py-20 px-2 md:px-8 lg:px-12">
+    <section className="flex flex-col items-center space-y-20 py-16 sm:py-20 px-2 lg:px-12">
 
       {/* Header Section */}
       <div className="flex flex-col items-center text-center space-y-3 sm:space-y-4">
@@ -57,7 +57,7 @@ export default function Investment() {
         </p>
       </div>
 
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-5 md:gap-6 lg:gap-12">
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-5 md:gap-2 lg:gap-12">
         <Card
           title={"Security that never sleeps"}
           extra={"Explore security"}
