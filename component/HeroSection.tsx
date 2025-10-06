@@ -39,7 +39,7 @@ export default function Hero() {
                     bank account fro your phone, for free.</p>
 
                 <div className="flex items-center justify-center rounded-full backdrop-blur-md bg-white shadow-lg shadow-[#bebebe]/40  w-fit p-3 sm:p-4 my-2 cursor-pointer">
-                    <p className="text-xs sm:text-sm md:text-base font-medium text-black">Open Finnova account</p>
+                    <span className="text-xs sm:text-sm md:text-base font-medium text-black">Open Finnova account</span>
                 </div>
             </div>
 
@@ -47,21 +47,20 @@ export default function Hero() {
                 {/* block*/}
                 <div className="relative max-w-5xl px-5 h-full mx-auto flex flex-col md:flex-row rounded-t-4xl bg-gradient-to-tl from-black to-[#143803] z-20">
 
-                    <div className="hidden px-7 pt-5 lg:flex flex-col items-start">
-
+                    <div className="hidden px-5 pt-5 lg:flex flex-col items-start">
                         <p className="font-normal text-white text-xl">Finnova</p>
                         <div className="pt-8 flex flex-col items-start space-y-2">
                             {Features.map((feature, i) => (
                                 <div key={i} className="flex items-center gap-1 lg:gap-2">
                                     <ChevronDown size={12} color={"#7A7A7A"} />
-                                    <p className="font-normal text-base text-[#7A7A7A]">{feature}</p>
+                                    <span className="font-normal text-base text-[#7A7A7A]">{feature}</span>
                                 </div>
                             ))
                             }
                         </div>
                     </div>
 
-                    <div className="hidden lg:block w-0.5 h-80 mx-4 md:mx-8 bg-gradient-to-t from-black via-[#2c2d2c] to-[#143803] "></div>
+                    <div className="hidden lg:block w-0.5 h-80 mx-4 md:mx-6 bg-gradient-to-t from-black via-[#2c2d2c] to-[#143803] "></div>
 
                     <div className="pt-5 flex flex-col space-y-5 w-full">
                         <div className="flex justify-between gap-10 items-center">
@@ -82,7 +81,7 @@ export default function Hero() {
                                 </div>
 
                                 <div className="flex items-center w-fit rounded-xl px-3 py-1 gap-1 sm:gap-2 bg-[#232323]">
-                                    <p className=" text-[#F5F5F5] font-normal text-[10px] sm:text-xs">John Smith</p>
+                                    <span className=" text-[#F5F5F5] font-normal text-[10px] sm:text-xs">John Smith</span>
                                     <ChevronDown size={15} color={"#F5F5F5"} />
                                 </div>
                             </div>
@@ -90,8 +89,8 @@ export default function Hero() {
 
                         <div className="flex items-center">
                             {Cards.map((card, i) => (
-                                <div key={i} className={`${card.bg_color && "bg-white"} w-fit rounded-full px-2 md:px-3 py-1 md:py-2`}>
-                                    <p className="text-[#7A7A7A] font-medium text-xs md:text-sm">{card.name}</p>
+                                <div key={i} className={`${card.bg_color && "bg-white"} flex items-center justify-center w-fit rounded-full px-2 lg:px-3 py-1 lg:py-2`}>
+                                    <span className="text-[#7A7A7A] font-medium text-xs md:text-sm">{card.name}</span>
                                 </div>
                             ))}
                         </div>
@@ -108,7 +107,7 @@ export default function Hero() {
                                         <div className="w-1 h-1 rounded-full bg-[#535353]"></div>
 
                                         <div className="w-5 h-5 flex items-center justify-center rounded-full bg-[#395828]">
-                                            <p className="font-bold text-sm md:text-base">+</p>
+                                            <span className="font-bold text-sm md:text-base">+</span>
                                         </div>
                                     </div>
                                 </div>
@@ -128,16 +127,10 @@ export default function Hero() {
 
                                             <div className="text-[#C1C1C1] flex items-center justify-center gap-1">
                                                 {[1, 2, 3, 4].map((num, i) => (
-                                                    <div
-                                                        key={i}
-                                                        className="w-1 h-1 sm:w-2 sm:h-2 rounded-full bg-[#C1C1C1]"
-                                                    />
+                                                    <div key={i} className="w-1 h-1 sm:w-2 sm:h-2 rounded-full bg-[#C1C1C1]" />
                                                 ))}
                                                 {[6, 7, 3, 5].map((num, i) => (
-                                                    <span
-                                                        key={i}
-                                                        className="text-xs sm:text-sm md:text-base"
-                                                    >
+                                                    <span key={i} className="text-xs sm:text-sm md:text-base">
                                                         {num}
                                                     </span>
                                                 ))}
@@ -149,23 +142,23 @@ export default function Hero() {
                             </div>
 
                             <div className="flex flex-col max-w-4xl space-y-3 md:space-y-5 lg:space-y-6 ">
-                                <span className="font-medium text-sm sm:text-base md:text-lg lg:text-xl text-[#F5F5F5]">Card Balance (USD)</span>
-                                <span className="font-normal text-xl sm:text-xl md:text-2xl lg:text-3xl text-[#C6C6C6]">$6,950</span>
+                                <p className="font-medium text-sm sm:text-base md:text-lg lg:text-xl text-[#F5F5F5]">Card Balance (USD)</p>
+                                <p className="font-normal text-xl sm:text-xl md:text-2xl lg:text-3xl text-[#C6C6C6]">$6,950</p>
 
                                 <div className="flex justify-between gap-10 md:gap-8 items-center">
-                                    <p className="text-nomral text-[10px] md:text-xs text-[#353434]">Balance  Details</p>
-                                    <div className="flex items-center justify-center gap-2 bg-[#232323] px-2 md:px-3 py-1 rounded-full w-fit ">
-                                        <p className="text-[#AFAFA7] font-normal text-[10px] md:text-xs">Today</p>
+                                    <p className="text-nomral text-[10px] md:text-xs text-[#353434]">Details</p>
+                                    <div className="flex items-center justify-center gap-1 md:gap-2 bg-[#232323] px-3 py-1 rounded-full w-fit ">
+                                        <span className="text-[#AFAFA7] font-normal text-[10px] md:text-xs">Today</span>
                                         <ChevronDown size={12} color={"#AFAFA7"} />
                                     </div>
                                 </div>
                             </div>
 
 
-                            <div className="flex flex-col  gap-3 md:gap-6 ">
+                            <div className="flex flex-col gap-3 md:gap-6 ">
 
                                 <div className="flex justify-between items-center gap-16">
-                                    <p className="font-medium text-sm sm:text-base md:text-xl text-[#F5F5F5]">Statistics</p>
+                                    <p className="font-medium text-sm sm:text-base md:text-lg lg:text-xl text-[#F5F5F5]">Statistics</p>
 
                                     <div className="flex items-center justify-center gap-2 bg-[#232323] px-3 py-1 rounded-full w-fit ">
                                         <span className="text-[#AFAFA7] font-normal text-xs">Week</span>
