@@ -5,8 +5,7 @@ export default function Crypto() {
         <div className="flex items-center justify-between px-2 md:px-8 lg:px-20 py-20 gap-6">
 
             <div className="flex flex-col space-y-4 w-full md:max-w-xl items-start justify-center">
-
-                <div className="flex items-center justify-center gap-3 px-5 py-2 rounded-full backdrop-blur-md bg-white shadow-lg shadow-[#058E00]/40 w-fit">
+                <div className="flex items-center justify-center gap-2 lg:gap-3 px-4 lg:px-5 py-2 rounded-full backdrop-blur-md bg-white shadow-lg shadow-[#058E00]/40 w-fit">
                     <span className="w-1 h-1 rounded-full bg-[#058E00] ring-1 ring-[#2dd327] animate-ping
                     shadow-background "></span>
                     <span className="font-medium text-xs md:text-sm text-[#058E00]">Cryptocurrency</span>
@@ -28,20 +27,20 @@ export default function Crypto() {
                 </div>
             </div>
 
-            <div className="hidden sm:flex flex-col w-full h-full">
-                <div className="ml-50 w-40 h-40 rounded-full flex items-center justify-center [transform:rotateX(50deg)_rotateY(-50deg)] bg-[#FBBC05]">
-                    <DollarSign size={70} color="white" />
-                </div>
+            <div className="hidden sm:flex flex-col max-w-xl h-full">
+                <span className="md:ml-48 lg:ml-50 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full flex items-center justify-center [transform:rotateX(50deg)_rotateY(-50deg)] bg-[#FBBC05]">
+                    <DollarSign color="white" className="md:w-15 md:h-15 lg:w-20 lg:h-20" />
+                </span>
 
-                <div className="ml-3 mt-12 w-50 h-50 rounded-full flex items-center justify-center [transform:rotateX(50deg)_rotateY(50deg)] bg-[#395828]">
-                    <HandCoins size={90} color="white" />
-                </div>
+                <span className="md:ml-2 lg:ml-3 md:mt-8 lg:mt-12 md:w-44 md:h-44 lg:w-50 lg:h-50 rounded-full flex items-center justify-center [transform:rotateX(40deg)_rotateY(50deg)] bg-[#395828]">
+                    <HandCoins color="white" className="md:w-18 md:h-18 lg:w-22 lg:h-22" />
+                </span>
 
-                <div className="ml-56 mt-8 w-50 h-50 rounded-full flex items-center justify-center [transform:rotateX(40deg)_rotateY(-40deg)]  bg-black">
-                    <Bitcoin size={100} color="white" />
-                </div>
+                <span className="md:ml-48 lg:ml-56 md:mt-4 lg:mt-8 md:w-46 md:h-46 lg:w-50 lg:h-50 rounded-full flex items-center justify-center [transform:rotateX(40deg)_rotateY(-40deg)]  bg-black">
+                    <Bitcoin color="white" className="md:w-28 md:h-28 lg:w-30 lg:h-30" />
+                </span>
             </div>
 
-        </div>
+        </div >
     );
 }
