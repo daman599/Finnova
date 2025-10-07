@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { US, EU, JP } from "country-flag-icons/react/3x2";
+import { US, EU, JP, PE } from "country-flag-icons/react/3x2";
 
 interface CardType {
   title: string;
@@ -16,14 +16,15 @@ interface countryCardType {
 }
 
 const CountryCards: countryCardType[] = [
-  { countryFlag: JP, currency: "JPY", currencyName: "Japanese Yen", budget: "+¥1500.00", z: 30 },
-  { countryFlag: US, currency: "USD", currencyName: "US Dollar", budget: "+$290.99", z: 20 },
-  { countryFlag: EU, currency: "EUR", currencyName: "Euro", budget: "-€20.99", z: 10 },
+  { countryFlag: JP, currency: "JPY", currencyName: "Japanese Yen", budget: "+¥1500.00", z: 40 },
+  { countryFlag: PE, currency: "PEN", currencyName: "Peruvian Sol ", budget: "+S/20.99", z: 20 },
+  { countryFlag: US, currency: "USD", currencyName: "US Dollar", budget: "+$290.99", z: 10 },
+  { countryFlag: EU, currency: "EUR", currencyName: "Euro", budget: "-€20.99", z: 5 },
 ];
 
 function Card({ title, extra, children }: CardType) {
   return (
-    <div className="bg-[#F6F6F6] flex flex-col space-y-2 sm:space-y-4 w-full md:max-w-md h-[32rem] md:h-[41rem] rounded-3xl lg:rounded-4xl px-4 md:px-3 lg:px-6 py-4 md:py-5 lg:py-7">
+    <div className="bg-[#F6F6F6] relative flex flex-col space-y-2 sm:space-y-4 w-full md:max-w-md rounded-xl lg:rounded-4xl h-[36rem] md:h-[41rem] px-4 md:px-3 lg:px-6 py-4 md:py-5 lg:py-7">
       <div className="px-2 space-y-1">
         <p className="font-semibold text-lg md:text-xl lg:text-2xl">{title}</p>
         <p className="text-[#A0A0A0] font-medium text-sm md:text-base">Experience the freedom of hassle free modern transactions and say
@@ -59,18 +60,18 @@ export default function Investment() {
         </p>
       </div>
 
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-5 lg:gap-10">
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-6 lg:gap-10 overflow-hidden">
         <Card
           title={"Security that never sleeps"}
           extra={"Explore security"}
         >
-          <div className="relative flex items-end justify-center h-full px-2 mt-4 sm:mt-0">
+          <div className=" flex items-end justify-center h-full mt-4 sm:mt-0 overflow-hidden">
             <Image
               src={"/black-card.svg"}
               width={250}
               height={100}
               alt={"card"}
-              className="absolute w-[155px] md:w-[200px] lg:w-[230px] lg:top-[103px] md:top-[136px] top-[67.5px] left-2 "
+              className="absolute top-[35%] md:top-[42.7%] left-[4%] md:left-[6%]"
             />
 
             <Image
@@ -78,7 +79,7 @@ export default function Investment() {
               width={232}
               height={100}
               alt={"card"}
-              className="absolute w-[130px] md:w-[180px] lg:w-[210px] left-[110px] md:left-32 md:top-[194px] lg:top-[165.5px] top-[125px] lg:left-37 "
+              className="absolute top-[45.9%] md:top-[52.3%] left-[11%] md:left-[25%] lg:left-[38%]"
             />
           </div>
         </Card>
@@ -87,7 +88,7 @@ export default function Investment() {
           title={"Free global transfers"}
           extra={"Explore transfers"}
         >
-          <div className="relative flex flex-col items-center justify-center mt-2 lg:mt-5">
+          <div className="relative flex flex-col items-center justify-center h-full mt-7 md:mt-2">
             {CountryCards.map((card, i) => {
               const Flag = card.countryFlag;
 
@@ -113,13 +114,13 @@ export default function Investment() {
 
             <Image
               src={"/earth.svg"}
-              width={500}
+              width={330}
               height={100}
               alt={"earth"}
-              className="absolute mt-4 sm:mt-0 w-[250px] md:w-[310px] lg:w-[500px] top-[177.5px] md:top-[280px] lg:top-[239px]"
+              className="absolute top-[80%] md:top-[75%] lg:top-[70%]"
             />
-
           </div>
+
         </Card>
       </div >
 
