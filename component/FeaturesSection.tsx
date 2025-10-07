@@ -27,7 +27,7 @@ const budgetingData: BudgetingType[] = [
 ];
 
 interface AccountsType {
-    icon: React.ElementType;
+    icon: React.ElementType<{ className: string }>;
     name: string;
     expanses: string;
     color: string;
@@ -40,39 +40,37 @@ const accountsData: AccountsType[] = [
 
 function FeatureCard({ title, description, children }: { title: string; description: string; children: React.ReactNode }) {
     return (
-        <div className="bg-[#F6F6F6] w-[346px] h-full rounded-3xl px-6 py-4">
-            <p className="py-1 md:py-2 text-center font-medium text-base md:text-xl">{title}</p>
-            <div className="flex flex-col space-y-2">
-                <p className="py-1 md:py-2 text-center font-medium text-xs sm:text-sm md:text-base text-[#A0A0A0]">{description}</p>
-                {children}
-            </div>
+        <div className="bg-[#F6F6F6] rounded-3xl p-5 md:px-3 md:py-3 lg:p-6 flex flex-col">
+            <h3 className="text-center font-medium text-lg md:text-xl mb-2">{title}</h3>
+            <p className="text-center text-sm md:text-base text-[#A0A0A0] mb-4">{description}</p>
+            <div className="flex-1 items-baseline">{children}</div>
         </div>
     );
 }
 
 export default function FeaturesSection() {
     return (
-        <div className="flex flex-col md:flex-row items-center justify-center gap-5 my-48">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-3 lg:gap-6 max-w-6xl mx-auto my-48 px-2">
 
             <FeatureCard
                 title="Analytics"
                 description="Gain insights into your financial habits with advanced analytics, helping you make smarter decisions and manage money effectively."
             >
-                <div className="bg-white w-full h-full p-1 rounded-2xl">
+                <div className="bg-white w-full h-fit  rounded-2xl">
                     {analyticsData.map((obj, i) => {
                         const Flag = obj.flag;
                         return (
                             <div key={i} className="flex items-center gap-4 px-5 py-2">
-                                <Flag title={obj.name} className="w-9 h-9" />
+                                <Flag title={obj.name} className="w-6 h-6 md:w-3 md:h-3 lg:w-9 lg:h-9" />
                                 <div className="flex items-center justify-between gap-6 flex-1">
                                     <div className="flex flex-col space-y-0.5 flex-1">
-                                        <p className="text-sm md:text-base">{obj.currency}</p>
+                                        <span className="text-sm lg:text-base">{obj.currency}</span>
                                         <div className="w-full h-1 rounded-full bg-gray-200">
                                             <div className="h-1 rounded-full bg-green-400" style={{ width: obj.progress }} />
                                         </div>
                                     </div>
 
-                                    <p className="font-medium text-xs text-[#B5B5B5]">{obj.balance}</p>
+                                    <span className="font-medium text-xs text-[#B5B5B5]">{obj.balance}</span>
                                 </div>
                             </div>
                         );
@@ -82,19 +80,19 @@ export default function FeaturesSection() {
 
             <FeatureCard
                 title="Budgeting"
-                description="Stay in control of your income and expenses with powerful budgeting tools designed to help you reach your financial goals."
+                description="Stay in control of your income and expenses with powerful budgeting tools designed to help you reach your financial goals with less effort and time."
             >
-                <div className="flex flex-col gap-1 w-full h-full md:gap-4">
+                <div className="flex flex-col w-full gap-1 lg:gap-3">
                     {budgetingData.map((obj, i) => (
                         <div key={i} className="bg-white w-ful rounded-2xl flex flex-col justify-between px-5 py-1">
                             <div className="flex justify-between items-center">
-                                <p className="font-medium text:xs sm:text-sm md:text-base">{obj.title}</p>
+                                <span className="font-medium text-sm lg:text-base">{obj.title}</span>
                                 <p className="text-[#395828] font-medium text-xs">{obj.profit}</p>
                             </div>
 
                             <div className="flex justify-between">
-                                <p className="font-normal text-xs text-[#B5B5B5]">{obj.subtitle}</p>
-                                {obj.extraNote && <p className="text-xs md:text-sm">{obj.extraNote}</p>}
+                                <span className="font-normal text-xs text-[#B5B5B5]">{obj.subtitle}</span>
+                                {obj.extraNote && <span className="text-xs lg:text-sm">{obj.extraNote}</span>}
                             </div>
                         </div>
                     ))}
@@ -103,28 +101,32 @@ export default function FeaturesSection() {
 
             <FeatureCard
                 title="Accounts"
-                description="Effortlessly manage all your accounts in one place, giving you a clear and organized overview of your finances. Keep track easily."
+                description="Effortlessly manage all your accounts in one place, giving you a clear and organized overview of your finances.Easy peasy lemon sequeezy."
             >
-                <div className="bg-white w-full h-full p-1 rounded-2xl">
+                <div className="bg-white w-full h-fit rounded-2xl">
                     {accountsData.map((obj, i) => {
                         const Icon = obj.icon;
                         return (
-                            <div key={i} className="flex items-center justify-between gap-20 md:gap-24 px-4 md:px-5 py-1 md:py-2">
-                                <div className="flex items-center gap-2">
+                            <div
+                                key={i}
+                                className="flex items-center justify-between px-3 py-2 rounded-xl"
+                            >
+                                <div className="flex items-center gap-2 lg:gap-3">
                                     <div
-                                        className="w-9 h-9 rounded-full flex items-center justify-center"
+                                        className="w-8 h-8 md:w-7 md:h-7 lg:w-9 lg:h-9 rounded-full flex items-center justify-center"
                                         style={{ backgroundColor: obj.color }}
                                     >
-                                        <Icon size={16} />
+                                        <Icon className="w-5 h-5 md:w-4 md:h-4 lg:w-5 lg:h-5" />
                                     </div>
-                                    <p className="text-sm md:text-base">{obj.name}</p>
+                                    <span className="text-sm lg:text-base font-medium">{obj.name}</span>
                                 </div>
 
-                                <p className="font-medium text-xs text-[#B5B5B5]">{obj.expanses}</p>
+                                <span className="font-medium text-xs lg:text-sm text-[#7A7A7A]">{obj.expanses}</span>
                             </div>
                         );
                     })}
                 </div>
+
             </FeatureCard>
         </div>
     );
