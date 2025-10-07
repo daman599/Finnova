@@ -1,6 +1,9 @@
-import { ChevronDown } from "lucide-react";
+"use client"
+import { ChevronDown, Check } from "lucide-react";
+import { useState } from "react";
 
 export default function Finances() {
+  const [state, setState] = useState<string>("idle");
   return (
     <section className="flex flex-col items-center space-y-12 py-16 sm:py-20 px-2 md:px-8 lg:px-12 my-5">
 
@@ -81,11 +84,37 @@ export default function Finances() {
             </div>
 
             {/* CTA Button */}
-            <div className="bg-black translate-y-3 px-6 md:px-8 lg:px-12 py-1 md:py-2 lg:py-3 rounded-3xl my-2 md:my-4 lg:my-7 self-center cursor-pointer hover:scale-105 transition-all">
-              <span className="font-normal text-xs sm:text-sm lg:text-base text-[#9F9F9F]">
-                Confirm and Send
+            <button
+              onClick={() => {
+                setState("loading");
+
+                setTimeout(() => {
+                  setState("done");
+                  setTimeout(() => setState("idle"), 1500);
+                }, 2000)
+              }}
+              className={`px-6 md:px-8 lg:px-12 py-2 lg:py-3 rounded-3xl my-4 lg:my-7 
+                        self-center cursor-pointer transition-all duration-200
+                        flex items-center justify-center gap-3 md:gap-4
+                         ${state === "done"
+                  ? "bg-[#058E00] shadow-[0_0_12px_rgba(5,142,0,0.6)]"
+                  : "bg-black hover:scale-105"
+                } `}>
+
+              {state === "loading" ? (
+                <div className="w-4 h-4 border-2 border-t-transparent border-white rounded-full animate-spin"></div>
+              ) : state === "done" ? (
+                <div className="w-5 h-5 rounded-full border-1 border-white bg-[#058E00] flex items-center justify-center">
+                  <span><Check size={10} color={"white"} /></span>
+                </div>
+              ) : null}
+
+              <span className={`font-normal text-xs sm:text-sm lg:text-base ${state === "done" ? "text-white" : "text-[#9F9F9F]"} `}>
+                {state === "idle" && "Confirm and Send"}
+                {state === "loading" && "Sending..."}
+                {state === "done" && "Done"}
               </span>
-            </div>
+            </button>
 
           </div>
 
