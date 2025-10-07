@@ -6,17 +6,23 @@ import FeaturesSection from "@/component/FeaturesSection";
 import Crypto from "@/component/Crypto";
 import Investment from "@/component/Investment";
 import Hero from "@/component/HeroSection";
+import Navbar from "@/component/Navbar";
+import Buttons from "@/component/Buttons";
 
 export default function Home() {
   return (
     <>
-      <Hero />
-      <Finances />
-      <Card />
-      <CardFeatures />
-      <Investment />
-      <Crypto />
-      <FeaturesSection />
+      <div className="w-full flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 py-2">
+        <Navbar />
+        <Buttons />
+        <Hero />
+        <Finances />
+        <Card />
+        <CardFeatures />
+        <Investment />
+        <Crypto />
+        <FeaturesSection />
+      </div>
       <Footer />
     </>
   );
