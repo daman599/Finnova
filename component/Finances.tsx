@@ -94,12 +94,13 @@ export default function Finances() {
                 }, 2000)
               }}
               className={`px-6 md:px-8 lg:px-12 py-2 lg:py-3 rounded-3xl my-4 lg:my-7 
-                        self-center cursor-pointer transition-all duration-200
+                        self-center transition-all duration-500
                         flex items-center justify-center gap-3 md:gap-4
                          ${state === "done"
                   ? "bg-[#058E00] shadow-[0_0_12px_rgba(5,142,0,0.6)]"
                   : "bg-black hover:scale-105"
-                } `}>
+                } 
+                 ${state === "idle" ? "cursor-pointer" : "cursor-not-allowed"}`}>
 
               {state === "loading" ? (
                 <div className="w-4 h-4 border-2 border-t-transparent border-white rounded-full animate-spin"></div>
