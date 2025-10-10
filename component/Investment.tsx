@@ -1,5 +1,27 @@
+"use client"
+
 import Image from "next/image";
 import { US, EU, JP, PE } from "country-flag-icons/react/3x2";
+import { easeIn, easeInOut, motion, stagger } from "motion/react";
+
+const parentVariant = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      delayChildren: stagger(0.15, { startDelay: 0.5, ease: easeInOut }),
+    }
+  },
+}
+
+const childVariant = {
+  hidden: { opacity: 0, y: 50 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.3, ease: easeIn },
+  },
+}
 
 interface CardType {
   title: string;
@@ -88,12 +110,19 @@ export default function Investment() {
           title={"Free global transfers"}
           extra={"Explore transfers"}
         >
-          <div className="relative flex flex-col items-center justify-center h-full mt-7 md:mt-2">
+          <motion.div
+            initial={"hidden"}
+            whileInView={"show"}
+            variants={parentVariant}
+            viewport={{ once: true }}
+
+            className="relative flex flex-col items-center justify-center h-full mt-7 md:mt-2">
             {CountryCards.map((card, i) => {
               const Flag = card.countryFlag;
 
               return (
-                <div
+                <motion.div
+                  variants={childVariant}
                   key={i}
                   className={`bg-white rounded-full flex items-center px-4 lg:px-6 py-2 shadow-lg shadow-[#A0A0A0] w-fit h-fit absolute transition-transform duration-300 hover:translate-y-2`}
                   style={{ top: `${i * 40}px`, zIndex: card.z }}
@@ -108,7 +137,7 @@ export default function Investment() {
                       <span className="font-medium text-[10px] sm:text-xs">{card.budget}</span>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               );
             })}
 
@@ -119,7 +148,7 @@ export default function Investment() {
               alt={"earth"}
               className="absolute top-[80%] md:top-[75%] lg:top-[70%]"
             />
-          </div>
+          </motion.div>
 
         </Card>
       </div >
