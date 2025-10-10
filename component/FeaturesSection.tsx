@@ -1,5 +1,27 @@
+"use client"
+
 import { US, EU } from "country-flag-icons/react/3x2";
 import { ShoppingCart, Train } from "lucide-react";
+import { easeInOut, easeOut, motion, stagger } from "motion/react";
+
+const parentVariant = {
+    hidden: { opacity: 0 },
+    show: {
+        opacity: 1,
+        transition: {
+            delayChildren: stagger(0.25, { startDelay: 0.10, ease: easeInOut })
+        }
+    },
+}
+
+const childVariant = {
+    hidden: { opacity: 0, y: 100 },
+    show: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.8, ease: easeOut },
+    },
+}
 
 interface AnalyticsType {
     flag: React.ComponentType<{ title: string; className: string }>;
@@ -40,17 +62,22 @@ const accountsData: AccountsType[] = [
 
 function FeatureCard({ title, description, children }: { title: string; description: string; children: React.ReactNode }) {
     return (
-        <div className="bg-[#F6F6F6] rounded-3xl p-5 md:px-3 md:py-3 lg:p-6 flex flex-col">
+        <motion.div variants={childVariant} className="bg-[#F6F6F6] rounded-3xl p-5 md:px-3 md:py-3 lg:p-6 flex flex-col" >
             <h3 className="text-center font-medium text-lg md:text-xl mb-2">{title}</h3>
             <p className="text-center text-sm md:text-base text-[#A0A0A0] mb-4">{description}</p>
             <div className="flex-1 items-baseline">{children}</div>
-        </div>
+        </motion.div>
     );
 }
 
 export default function FeaturesSection() {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-3 lg:gap-6 max-w-6xl mx-auto my-48 px-2">
+        <motion.div
+            variants={parentVariant}
+            initial={"hidden"}
+            whileInView={"show"}
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-3 lg:gap-6 max-w-6xl mx-auto my-48 px-2">
 
             <FeatureCard
                 title="Analytics"
@@ -128,6 +155,6 @@ export default function FeaturesSection() {
                 </div>
 
             </FeatureCard>
-        </div>
+        </motion.div>
     );
 }
