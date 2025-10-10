@@ -4,6 +4,7 @@ import { useState } from "react";
 
 export default function Finances() {
   const [state, setState] = useState<string>("idle");
+
   return (
     <section className="flex flex-col items-center space-y-12 py-16 sm:py-20 px-2 md:px-8 lg:px-12 my-5">
       {/* Header Section */}

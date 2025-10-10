@@ -1,5 +1,6 @@
 import { ArrowDown, ChevronDown, Headphones, Bell } from "lucide-react";
 import Image from "next/image";
+import CoinsCountUp from "@/component/ui/CoinsCountUp";
 
 interface iconsType {
     icon: React.ComponentType<{ color: string, size: number }>;
@@ -24,6 +25,7 @@ const Cards: cardType[] = [
 ];
 
 export default function Hero() {
+
     return (
         <section className="bg-black relative max-w-7xl w-full min-h-[100vh] flex flex-col items-center justify-center my-10 md:my-20 mx-auto rounded-4xl overflow-hidden z-20 p-4">
 
@@ -143,7 +145,9 @@ export default function Hero() {
 
                             <div className="flex flex-col max-w-4xl space-y-3 md:space-y-5 lg:space-y-6 ">
                                 <p className="font-medium text-sm sm:text-base md:text-lg lg:text-xl text-[#F5F5F5]">Card Balance (USD)</p>
-                                <p className="font-normal text-xl sm:text-xl md:text-2xl lg:text-3xl text-[#C6C6C6]">$6,950</p>
+                                <CoinsCountUp
+                                    to={6950}
+                                    className={"font-normal text-xl sm:text-xl md:text-2xl lg:text-3xl text-[#C6C6C6]"} />
 
                                 <div className="flex justify-between gap-10 md:gap-8 items-center">
                                     <p className="text-nomral text-[10px] md:text-xs text-[#353434]">Details</p>
