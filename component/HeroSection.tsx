@@ -74,7 +74,7 @@ export default function Hero() {
                                         return (
                                             <div key={i} className="relative w-fit h-fit bg-[#232323] rounded-full p-1.5">
                                                 <Icon color={obj.color} size={12} />
-                                                {i == 1 && <div className="absolute top-0 right-0 block  ring-2 ring-[#232323]  z-10 w-2 h-2 rounded-full bg-[#1f968e]"></div>}
+                                                {i == 1 && <div className="absolute top-0 right-0 block  ring-2 ring-[#232323]  w-2 h-2 rounded-full bg-[#1f968e] animate-pulse"></div>}
                                             </div>
                                         );
                                     })}

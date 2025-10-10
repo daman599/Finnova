@@ -6,7 +6,6 @@ export default function Finances() {
   const [state, setState] = useState<string>("idle");
   return (
     <section className="flex flex-col items-center space-y-12 py-16 sm:py-20 px-2 md:px-8 lg:px-12 my-5">
-
       {/* Header Section */}
       <div className="flex flex-col items-center text-center space-y-3 sm:space-y-4">
         <div className="flex items-center justify-center gap-2 sm:gap-3 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full backdrop-blur-md bg-white shadow-lg shadow-[#bebebe]/40">
@@ -25,7 +24,6 @@ export default function Finances() {
 
       {/* Content Section */}
       <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-10 lg:gap-14 w-full max-w-6xl">
-
         {/* Left Text Block */}
         <div className="hidden md:flex flex-col items-start space-y-4 md:space-y-6 text-start md:text-left w-full md:w-1/2">
           <div className="flex items-center justify-center md:justify-start gap-2 sm:gap-3 px-3 sm:px-5 py-1 sm:py-2 rounded-full backdrop-blur-lg bg-white shadow-lg shadow-[#058E00]/40 w-fit">
@@ -118,7 +116,6 @@ export default function Finances() {
             </button>
 
           </div>
-
         </div>
       </div>
     </section >

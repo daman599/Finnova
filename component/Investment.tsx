@@ -9,7 +9,7 @@ const parentVariant = {
   show: {
     opacity: 1,
     transition: {
-      delayChildren: stagger(0.15, { startDelay: 0.5, ease: easeInOut }),
+      delayChildren: stagger(0.15, { startDelay: 0.3, ease: easeInOut }),
     }
   },
 }
