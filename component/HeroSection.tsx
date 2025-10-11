@@ -1,6 +1,10 @@
+"use client"
+
 import { ArrowDown, ChevronDown, Headphones, Bell } from "lucide-react";
 import Image from "next/image";
 import CoinsCountUp from "@/component/ui/CoinsCountUp";
+import { motion } from "motion/react";
+import { Spotlight } from "@/component/ui/Spotlight";
 
 interface iconsType {
     icon: React.ComponentType<{ color: string, size: number }>;
@@ -27,9 +31,23 @@ const Cards: cardType[] = [
 export default function Hero() {
 
     return (
-        <section className="bg-black relative max-w-7xl w-full min-h-[100vh] flex flex-col items-center justify-center my-10 md:my-20 mx-auto rounded-4xl overflow-hidden z-20 p-4">
+        <motion.section
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ ease: "easeInOut", duration: 0.5 }}
+            viewport={{ once: true }}
+
+            className="bg-black relative max-w-7xl w-full min-h-[100vh] flex flex-col items-center justify-center my-10 md:my-20 mx-auto rounded-4xl z-20 overflow-hidden p-4">
 
             <div className="absolute inset-0 bg-grid" />
+
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.1, ease: "easeIn", duration: 5 }}
+            >
+                <Spotlight className="-top-30 left-5 md:top-20 md:left-60 z-30" fill="white" />
+            </motion.div>
 
             <div className="flex flex-col items-center justify-center space-y-3 md:space-y-6 z-20">
 
@@ -183,7 +201,6 @@ export default function Hero() {
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
 
                         </div>
@@ -199,6 +216,6 @@ export default function Hero() {
                 </div>
             </div >
 
-        </section >
+        </motion.section >
     );
 }
