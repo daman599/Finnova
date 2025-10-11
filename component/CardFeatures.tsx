@@ -1,5 +1,8 @@
+"use client"
+
 import { ArrowRightCircle } from "lucide-react";
 import { FaGoogle, FaApple, FaServer } from "react-icons/fa"
+import { motion } from "motion/react";
 
 interface IconItem {
   label: string;
@@ -47,9 +50,18 @@ export default function CardFeatures() {
 
               <div className="bg-black mt-6 w-fit flex items-center justify-center gap-2 lg:gap-4 rounded-4xl px-3 lg:px-6 py-1 lg:py-2">
                 <span className="text-white text-normal text-xs lg:text-base">Learn more</span>
-                <div className="bg-white rounded-full">
+
+                <motion.div
+                  whileHover={{
+                    scaleX: 1.3,
+                    boxShadow: "0 0 10px 4px #395828",
+                  }}
+                  transition={{ type: "spring", stiffness: 100, damping: 10 }}
+                  className="bg-white rounded-full cursor-pointer"
+                >
                   <ArrowRightCircle />
-                </div>
+                </motion.div>
+
               </div>
             </div>
           );
@@ -57,6 +69,6 @@ export default function CardFeatures() {
 
       </div>
 
-    </section>
+    </section >
   );
 }
