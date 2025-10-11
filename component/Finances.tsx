@@ -1,14 +1,22 @@
 "use client"
 import { ChevronDown, Check } from "lucide-react";
 import { useState } from "react";
+import { motion } from "motion/react";
 
 export default function Finances() {
   const [state, setState] = useState<string>("idle");
 
   return (
-    <section className="flex flex-col items-center space-y-12 py-16 sm:py-20 px-2 md:px-8 lg:px-12 my-5">
+    <motion.section
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ ease: "easeIn", duration: 0.5 }}
+      viewport={{ once: true }}
+
+      className="flex flex-col items-center space-y-12 py-16 sm:py-20 px-2 md:px-8 lg:px-12 sm:my-5 md:my-10">
       {/* Header Section */}
-      <div className="flex flex-col items-center text-center space-y-3 sm:space-y-4">
+      <div className="flex flex-col items-center text-center space-y-3 sm:space-y-4"
+      >
         <div className="flex items-center justify-center gap-2 sm:gap-3 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full backdrop-blur-md bg-white shadow-lg shadow-[#bebebe]/40">
           <div className="w-1 h-1 rounded-full bg-[#058E00] ring-1 ring-[#2dd327] animate-ping"></div>
           <span className="font-medium text-xs sm:text-sm text-[#058E00]">Daily Finances</span>
@@ -119,6 +127,6 @@ export default function Finances() {
           </div>
         </div>
       </div>
-    </section >
+    </motion.section >
   );
 }
