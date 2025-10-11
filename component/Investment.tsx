@@ -124,8 +124,8 @@ export default function Investment() {
                 <motion.div
                   variants={childVariant}
                   key={i}
-                  className={`bg-white rounded-full flex items-center px-4 lg:px-6 py-2 shadow-lg shadow-[#A0A0A0] w-fit h-fit absolute transition-transform duration-300 hover:translate-y-2`}
-                  style={{ top: `${i * 40}px`, zIndex: card.z }}
+                  className={`bg-white rounded-full flex items-center px-4 lg:px-6 py-2 shadow-lg shadow-[#A0A0A0] w-fit h-fit absolute transition-transform duration-300 hover:translate-y-3`}
+                  style={{ top: `${i * 35}px`, zIndex: card.z }}
                 >
                   <Flag className="w-3 h-3 md:w-5 md:h-5 lg:w-9 lg:h-9" />
                   <div className="flex justify-between gap-10 md:gap-18 lg:gap-22">
