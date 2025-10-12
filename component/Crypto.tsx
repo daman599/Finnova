@@ -1,8 +1,19 @@
+"use client"
+
 import { Bitcoin, DollarSign, HandCoins } from "lucide-react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { useRef } from "react";
 
 export default function Crypto() {
+
+    const pathRef = useRef<HTMLDivElement | null>(null);
+
+    const { scrollYProgress } = useScroll({ target: pathRef, offset: ["start center", "end center"] });
+
+    const pathLength = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
     return (
-        <div className="flex items-center justify-between px-2 md:px-8 lg:px-20 py-20 gap-6">
+        <div className="flex items-center justify-between px-2 md:px-8 lg:px-20 md:py-20 gap-6">
 
             <div className="flex flex-col space-y-4 w-full md:max-w-xl items-start justify-center">
                 <div className="flex items-center justify-center gap-2 lg:gap-3 px-4 lg:px-5 py-2 rounded-full backdrop-blur-md bg-white shadow-lg shadow-[#058E00]/40 w-fit">
@@ -27,14 +38,21 @@ export default function Crypto() {
                 </div>
             </div>
 
-            <div className="relative hidden md:flex flex-col max-w-xl h-full">
+            <motion.div
+                ref={pathRef}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="relative hidden md:flex flex-col max-w-xl h-full"
+            >
                 <svg
                     className="absolute inset-0 w-full h-full z-0"
                     viewBox="0 0 300 500"
                     fill="none"
                 >
                     {/* S-shape curve */}
-                    <path
+                    <motion.path
+                        style={{ pathLength }}
                         d="M200 80 C 0 230, 180 350, 200 400 S 150 500, 150 480"
                         stroke="#888"
                         strokeWidth="2"
@@ -53,7 +71,8 @@ export default function Crypto() {
                 <span className="md:ml-48 lg:ml-56 md:mt-4 lg:mt-8 md:w-46 md:h-46 lg:w-50 lg:h-50 rounded-full flex items-center justify-center [transform:rotateX(40deg)_rotateY(-40deg)]  bg-black">
                     <Bitcoin color="white" className="md:w-28 md:h-28 lg:w-30 lg:h-30" />
                 </span>
-            </div>
+
+            </motion.div>
 
         </div >
     );
