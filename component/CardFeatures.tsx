@@ -3,6 +3,7 @@
 import { ArrowRightCircle } from "lucide-react";
 import { FaGoogle, FaApple, FaServer } from "react-icons/fa"
 import { motion } from "motion/react";
+import { BackgroundRippleEffect } from "@/component/ui/RippleEffect";
 
 interface IconItem {
   label: string;
@@ -22,7 +23,7 @@ export default function CardFeatures() {
     <section className="bg-black relative max-w-7xl w-full min-h-[100vh]
      flex flex-col items-center my-10 md:my-20 mx-auto rounded-4xl overflow-hidden p-4">
 
-      <div className="absolute inset-0 bg-grid" />
+      <BackgroundRippleEffect />
 
       <div className="flex flex-col items-center space-y-4 md:space-y-2 px-2 z-10">
         <div className="bg-[#262424] border-t-1 border-opacity-20 border-[#9F9F9F] w-fit rounded-t-[#FFFFFF] my-3 sm:my-6 flex items-center gap-2 justify-center py-2 px-3 rounded-xl">
