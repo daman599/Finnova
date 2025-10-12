@@ -2,24 +2,24 @@
 
 import { US, EU } from "country-flag-icons/react/3x2";
 import { ShoppingCart, Train } from "lucide-react";
-import { easeInOut, easeOut, motion, stagger } from "motion/react";
+import { motion, stagger, Variants } from "motion/react";
 
-const parentVariant = {
+const parentVariant: Variants = {
     hidden: { opacity: 0 },
     show: {
         opacity: 1,
         transition: {
-            delayChildren: stagger(0.25, { startDelay: 0.10, ease: easeInOut })
+            delayChildren: stagger(0.25, { startDelay: 0.10, ease: "easeInOut" })
         }
     },
 }
 
-const childVariant = {
+const childVariant: Variants = {
     hidden: { opacity: 0, y: 100 },
     show: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.8, ease: easeOut },
+        transition: { duration: 0.8, ease: "easeOut" },
     },
 }
 

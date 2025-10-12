@@ -30,7 +30,7 @@ export default function CoinsCountUp({
 
     useEffect(() => {
         if (isInView) {
-            animate(val, to, { duration: 0.5, ease: "easeOut" });
+            animate(val, to, { duration: 0.8, ease: "easeOut" });
         }
     }, [isInView])
 
