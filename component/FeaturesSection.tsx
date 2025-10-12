@@ -77,7 +77,7 @@ export default function FeaturesSection() {
             initial={"hidden"}
             whileInView={"show"}
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-3 lg:gap-6 max-w-6xl mx-auto my-48 px-2">
+            className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-3 lg:gap-6 max-w-6xl mx-auto my-28 md:my-56 px-2">
 
             <FeatureCard
                 title="Analytics"

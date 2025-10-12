@@ -21,7 +21,7 @@ const Icons: IconItem[] = [
 export default function CardFeatures() {
   return (
     <section className="bg-black relative max-w-7xl w-full min-h-[100vh]
-     flex flex-col items-center my-10 md:my-20 mx-auto rounded-4xl overflow-hidden p-4">
+     flex flex-col items-center my-5 md:my-24 mx-auto rounded-4xl overflow-hidden p-4">
 
       <BackgroundRippleEffect />
 
@@ -69,7 +69,6 @@ export default function CardFeatures() {
         })}
 
       </div>
-
     </section >
   );
 }

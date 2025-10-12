@@ -13,7 +13,7 @@ export default function Crypto() {
     const pathLength = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
     return (
-        <div className="flex items-center justify-between px-2 md:px-8 lg:px-20 md:py-20 gap-6">
+        <div className="flex items-center justify-between px-2 md:px-8 lg:px-20 md:py-24 md:gap-6">
 
             <div className="flex flex-col space-y-4 w-full md:max-w-xl items-start justify-center">
                 <div className="flex items-center justify-center gap-2 lg:gap-3 px-4 lg:px-5 py-2 rounded-full backdrop-blur-md bg-white shadow-lg shadow-[#058E00]/40 w-fit">

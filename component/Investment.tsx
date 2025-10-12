@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { US, EU, JP, PE } from "country-flag-icons/react/3x2";
 import { easeIn, easeInOut, motion, stagger } from "motion/react";
+import Reveal from "@/component/ui/Reveal";
 
 const parentVariant = {
   hidden: { opacity: 0 },
@@ -64,95 +65,97 @@ function Card({ title, extra, children }: CardType) {
 
 export default function Investment() {
   return (
-    <section className="flex flex-col items-center space-y-20 py-16 sm:py-20 px-2 lg:px-12 my-20">
+    <Reveal y={80}>
+      <section className="flex flex-col items-center space-y-20 py-16 sm:py-20 px-2 lg:px-12 my-20">
 
-      {/* Header Section */}
-      <div className="flex flex-col items-center text-center space-y-3 sm:space-y-4">
-        <div className="flex items-center justify-center gap-2 sm:gap-3 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full backdrop-blur-md bg-white shadow-lg shadow-[#bebebe]/40">
-          <div className="w-1 h-1 rounded-full bg-[#058E00] ring-1 ring-[#2dd327] animate-ping"></div>
-          <span className="font-medium text-xs sm:text-sm text-[#058E00]">Investments</span>
+        {/* Header Section */}
+        <div className="flex flex-col items-center text-center space-y-3 sm:space-y-4">
+          <div className="flex items-center justify-center gap-2 sm:gap-3 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full backdrop-blur-md bg-white shadow-lg shadow-[#bebebe]/40">
+            <div className="w-1 h-1 rounded-full bg-[#058E00] ring-1 ring-[#2dd327] animate-ping"></div>
+            <span className="font-medium text-xs sm:text-sm text-[#058E00]">Investments</span>
+          </div>
+
+          <h2 className="font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl max-w-2xl sm:max-w-3xl text-center">
+            Spend, save and manage your money, all in one place.
+          </h2>
+
+          <p className="font-medium text-[#A0A0A0] text-xs sm:text-sm md:text-base">
+            Open a full bank account from your phone, for free.
+          </p>
         </div>
 
-        <h2 className="font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl max-w-2xl sm:max-w-3xl text-center">
-          Spend, save and manage your money, all in one place.
-        </h2>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 lg:gap-10 overflow-hidden">
+          <Card
+            title={"Security that never sleeps"}
+            extra={"Explore security"}
+          >
+            <div className=" flex items-end justify-center h-full mt-4 sm:mt-0 overflow-hidden">
+              <Image
+                src={"/black-card.svg"}
+                width={250}
+                height={100}
+                alt={"card"}
+                className="absolute top-[35%] md:top-[42.7%] left-[4%] md:left-[6%]"
+              />
 
-        <p className="font-medium text-[#A0A0A0] text-xs sm:text-sm md:text-base">
-          Open a full bank account from your phone, for free.
-        </p>
-      </div>
+              <Image
+                src={"/green-card.svg"}
+                width={232}
+                height={100}
+                alt={"card"}
+                className="absolute top-[45.9%] md:top-[52.3%] left-[11%] md:left-[25%] lg:left-[38%]"
+              />
+            </div>
+          </Card>
 
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-6 lg:gap-10 overflow-hidden">
-        <Card
-          title={"Security that never sleeps"}
-          extra={"Explore security"}
-        >
-          <div className=" flex items-end justify-center h-full mt-4 sm:mt-0 overflow-hidden">
-            <Image
-              src={"/black-card.svg"}
-              width={250}
-              height={100}
-              alt={"card"}
-              className="absolute top-[35%] md:top-[42.7%] left-[4%] md:left-[6%]"
-            />
+          <Card
+            title={"Free global transfers"}
+            extra={"Explore transfers"}
+          >
+            <motion.div
+              initial={"hidden"}
+              whileInView={"show"}
+              variants={parentVariant}
+              viewport={{ once: true }}
 
-            <Image
-              src={"/green-card.svg"}
-              width={232}
-              height={100}
-              alt={"card"}
-              className="absolute top-[45.9%] md:top-[52.3%] left-[11%] md:left-[25%] lg:left-[38%]"
-            />
-          </div>
-        </Card>
+              className="relative flex flex-col items-center justify-center h-full mt-7 md:mt-2">
+              {CountryCards.map((card, i) => {
+                const Flag = card.countryFlag;
 
-        <Card
-          title={"Free global transfers"}
-          extra={"Explore transfers"}
-        >
-          <motion.div
-            initial={"hidden"}
-            whileInView={"show"}
-            variants={parentVariant}
-            viewport={{ once: true }}
-
-            className="relative flex flex-col items-center justify-center h-full mt-7 md:mt-2">
-            {CountryCards.map((card, i) => {
-              const Flag = card.countryFlag;
-
-              return (
-                <motion.div
-                  variants={childVariant}
-                  key={i}
-                  className={`bg-white rounded-full flex items-center px-4 lg:px-6 py-2 shadow-lg shadow-[#A0A0A0] w-fit h-fit absolute transition-transform duration-300 hover:translate-y-3`}
-                  style={{ top: `${i * 35}px`, zIndex: card.z }}
-                >
-                  <Flag className="w-3 h-3 md:w-5 md:h-5 lg:w-9 lg:h-9" />
-                  <div className="flex justify-between gap-10 md:gap-18 lg:gap-22">
-                    <div className="flex flex-col px-4">
-                      <p className="font-medium text-xs md:text-sm lg:text-base">{card.currencyName}</p>
-                      <p className="font-normal text-[10px] sm:text-xs text-[#B5B5B5]">{card.currency}</p>
+                return (
+                  <motion.div
+                    variants={childVariant}
+                    key={i}
+                    className={`bg-white rounded-full flex items-center px-4 lg:px-6 py-2 shadow-lg shadow-[#A0A0A0] w-fit h-fit absolute transition-transform duration-300 hover:translate-y-3`}
+                    style={{ top: `${i * 35}px`, zIndex: card.z }}
+                  >
+                    <Flag className="w-3 h-3 md:w-5 md:h-5 lg:w-9 lg:h-9" />
+                    <div className="flex justify-between gap-10 md:gap-18 lg:gap-22">
+                      <div className="flex flex-col px-4">
+                        <p className="font-medium text-xs md:text-sm lg:text-base">{card.currencyName}</p>
+                        <p className="font-normal text-[10px] sm:text-xs text-[#B5B5B5]">{card.currency}</p>
+                      </div>
+                      <div className="flex items-center justify-center">
+                        <span className="font-medium text-[10px] sm:text-xs">{card.budget}</span>
+                      </div>
                     </div>
-                    <div className="flex items-center justify-center">
-                      <span className="font-medium text-[10px] sm:text-xs">{card.budget}</span>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
+                  </motion.div>
+                );
+              })}
 
-            <Image
-              src={"/earth.svg"}
-              width={330}
-              height={100}
-              alt={"earth"}
-              className="absolute top-[80%] md:top-[75%] lg:top-[70%]"
-            />
-          </motion.div>
+              <Image
+                src={"/earth.svg"}
+                width={330}
+                height={100}
+                alt={"earth"}
+                className="absolute top-[80%] md:top-[75%] lg:top-[70%]"
+              />
+            </motion.div>
 
-        </Card>
-      </div >
+          </Card>
+        </div >
 
-    </section >
+      </section >
+    </Reveal>
   );
 }
