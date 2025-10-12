@@ -27,7 +27,21 @@ export default function Crypto() {
                 </div>
             </div>
 
-            <div className="hidden sm:flex flex-col max-w-xl h-full">
+            <div className="relative hidden md:flex flex-col max-w-xl h-full">
+                <svg
+                    className="absolute inset-0 w-full h-full z-0"
+                    viewBox="0 0 300 500"
+                    fill="none"
+                >
+                    {/* S-shape curve */}
+                    <path
+                        d="M200 80 C 0 230, 180 350, 200 400 S 150 500, 150 480"
+                        stroke="#888"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                    />
+                </svg>
+
                 <span className="md:ml-48 lg:ml-50 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full flex items-center justify-center [transform:rotateX(50deg)_rotateY(-50deg)] bg-[#FBBC05]">
                     <DollarSign color="white" className="md:w-15 md:h-15 lg:w-20 lg:h-20" />
                 </span>
