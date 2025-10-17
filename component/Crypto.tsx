@@ -50,13 +50,25 @@ export default function Crypto() {
                     viewBox="0 0 300 500"
                     fill="none"
                 >
+
+                    <defs>
+                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="2" result="blur" />
+                            <feMerge>
+                                <feMergeNode in="blur" />
+                                <feMergeNode in="SourceGraphic" />
+                            </feMerge>
+                        </filter>
+                    </defs>
+
                     {/* S-shape curve */}
                     <motion.path
                         style={{ pathLength }}
                         d="M200 80 C 0 230, 180 350, 200 400 S 150 500, 150 480"
-                        stroke="#888"
+                        stroke="#dddddd"
                         strokeWidth="2"
                         strokeLinecap="round"
+                        filter="url(#glow)"
                     />
                 </svg>
 
