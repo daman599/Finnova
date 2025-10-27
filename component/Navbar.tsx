@@ -57,7 +57,7 @@ export default function Navbar() {
             </div>
           ))}
 
-          <span className="px-3 lg:px-4 py-0.5 lg:py-1 rounded-full bg-black text-white text-[10px] lg:text-xs font-medium cursor-pointer hover:scale-105 transition">
+          <span className="px-3 lg:px-4 py-0.5 lg:py-1 rounded-full bg-black text-white text-[10px] lg:text-xs font-medium cursor-pointer hover:scale-105 transition-all">
             Log in
           </span>
 
