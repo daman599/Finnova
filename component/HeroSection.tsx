@@ -163,7 +163,7 @@ export default function Hero() {
                             <div className="flex flex-col max-w-4xl space-y-3 md:space-y-5 lg:space-y-6 ">
                                 <p className="font-medium text-sm sm:text-base md:text-lg lg:text-xl text-[#F5F5F5]">Card Balance (USD)</p>
                                 <CoinsCountUp
-                                    to={6950}
+                                    to={6953012}
                                     className={"font-normal text-xl sm:text-xl md:text-2xl lg:text-3xl text-[#C6C6C6]"} />
 
                                 <div className="flex justify-between gap-10 md:gap-8 items-center">
