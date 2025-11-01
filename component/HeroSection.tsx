@@ -32,16 +32,16 @@ export default function Hero() {
 
     return (
         <motion.section
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ ease: "easeInOut", duration: 0.5 }}
+            initial={{ opacity: 0 , scale:0 }}
+            whileInView={{ opacity: 1 , scale:1 }}
+            transition={{ ease: "easeIn", duration: 1 }}
             className="bg-black relative max-w-7xl w-full min-h-[100vh] flex flex-col items-center justify-center my-10 md:my-20 mx-auto rounded-4xl z-20 overflow-hidden p-4"
         >
             <div className="absolute inset-0 bg-grid" />
 
             <motion.div
-                initial={{ opacity: 0, scale:0 }}
-                animate={{ opacity: 1, scale:1  }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1  }}
                 transition={{ delay: 0.1, ease: "easeIn", duration: 5 }}
             >
                 <Spotlight className="-top-30 left-5 md:top-20 md:left-60 z-30" fill="white" />
