@@ -40,8 +40,8 @@ export default function Hero() {
             <div className="absolute inset-0 bg-grid" />
 
             <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                initial={{ opacity: 0, scale:0 }}
+                animate={{ opacity: 1, scale:1  }}
                 transition={{ delay: 0.1, ease: "easeIn", duration: 5 }}
             >
                 <Spotlight className="-top-30 left-5 md:top-20 md:left-60 z-30" fill="white" />
