@@ -32,9 +32,10 @@ export default function Hero() {
 
     return (
         <motion.section
-            initial={{ opacity: 0 , scale:0 }}
+            initial={{ opacity: 0 , scale:0.8 }}
             whileInView={{ opacity: 1 , scale:1 }}
-            transition={{ ease: "easeIn", duration: 0.8 }}
+            viewport={{ once: true }}
+            transition={{ ease: "easeOut", duration: 1 }}
             className="bg-black relative origin-center max-w-7xl w-full min-h-[100vh] flex flex-col items-center justify-center my-10 md:my-20 mx-auto rounded-4xl z-20 overflow-hidden p-4"
         >
             <div className="absolute inset-0 bg-grid" />
